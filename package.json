@@ -1,0 +1,41 @@
+{
+  "name": "stress-check-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "amplify:sandbox": "ampx sandbox",
+    "amplify:deploy": "ampx deploy"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.11.2",
+    "@aws-cdk/aws-apigatewayv2-integrations-alpha": "^2.114.1-alpha.0",
+    "autoprefixer": "^10.4.16",
+    "aws-amplify": "^6.15.4",
+    "chart.js": "^4.4.0",
+    "next": "^14.2.31",
+    "postcss": "^8.4.32",
+    "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "^3.4.2"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.16.1",
+    "@aws-amplify/backend-cli": "^1.8.0",
+    "@types/aws-lambda": "^8.10.152",
+    "@types/json-schema": "^7.0.15",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "20.11.18",
+    "@types/react": "18.2.21",
+    "@types/uuid": "^10.0.0",
+    "aws-cdk-lib": "^2.208.0",
+    "constructs": "^10.4.2",
+    "esbuild": "^0.25.8",
+    "tsx": "^4.20.3",
+    "typescript": "^5.9.2"
+  }
+}

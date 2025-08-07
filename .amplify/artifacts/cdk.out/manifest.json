@@ -1,0 +1,1802 @@
+{
+  "version": "45.0.0",
+  "artifacts": {
+    "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16.template.json",
+        "terminationProtection": false,
+        "tags": {
+          "amplify:deployment-type": "sandbox",
+          "created-by": "amplify"
+        },
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e5b9bc09b934f2759eb7fa68ef0ad1ce2f0828cf6d3438fab963807cba992b31.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16.assets"
+      ],
+      "metadata": {
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16": [
+          {
+            "type": "aws:cdk:stack-tags",
+            "data": [
+              {
+                "Key": "amplify:deployment-type",
+                "Value": "sandbox"
+              },
+              {
+                "Key": "created-by",
+                "Value": "amplify"
+              }
+            ]
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/deploymentType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "deploymentType"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/region": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "region"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifyAuth/UserPool/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPool4BA7F805"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifyAuth/UserPoolAppClient/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthUserPoolAppClient2626C6F8"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifyAuth/IdentityPool": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPool3FDE84CC"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifyAuth/authenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthauthenticatedUserRoleD8DA3689"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifyAuth/unauthenticatedUserRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthunauthenticatedUserRole2B524D9E"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifyAuth/IdentityPoolRoleAttachment": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyAuthIdentityPoolRoleAttachment045F17C8"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthUserPool5FB8BE09Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthUserPool5FB8BE09Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthUserPoolAppClient8EE9E276Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthUserPoolAppClient8EE9E276Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth/amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/auth.NestedStack/auth.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "auth179371D7"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/userPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "userPoolId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/webClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "webClientId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/identityPoolId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "identityPoolId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/authRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "authRegion"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/allowUnauthenticatedIdentities": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "allowUnauthenticatedIdentities"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/signupAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "signupAttributes"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/usernameAttributes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "usernameAttributes"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/verificationMechanisms": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "verificationMechanisms"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/passwordPolicyMinLength": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyMinLength"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/passwordPolicyRequirements": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "passwordPolicyRequirements"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/mfaConfiguration": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaConfiguration"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/mfaTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "mfaTypes"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/socialProviders": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "socialProviders"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/oauthCognitoDomain": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthCognitoDomain"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/oauthScope": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthScope"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/oauthRedirectSignIn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignIn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/oauthRedirectSignOut": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthRedirectSignOut"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/oauthResponseType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthResponseType"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/oauthClientId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "oauthClientId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/groups": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "groups"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/GraphQLAPI/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPI42A6FA33"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/GraphQLAPI/TransformerSchema": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/GraphQLAPI/DefaultApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPIDefaultApiKey1C8ED374"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/GraphQLAPI/NONE_DS": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/GraphQLAPI/NONE_DS/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataGraphQLAPINONEDS684BF699"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "NONE_DS"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/AmplifyManagedTableIsCompleteRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableIsCompleteRoleF825222C"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleB4E71DEA"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/AmplifyManagedTableOnEventRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyManagedTableOnEventRoleDefaultPolicyF6DABCB6"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-onEvent/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkonEvent1DFC2ECC"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/TableManagerCustomProvider/framework-isComplete/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "TableManagerCustomProviderframeworkisComplete2E51021B"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRole470BE899"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachineRoleDefaultPolicy89F3836A"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/AmplifyTableWaiterStateMachine/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AmplifyTableWaiterStateMachine060600BC"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager/amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent293ED81DArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent293ED81DArn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyTableManager.NestedStack/AmplifyTableManager.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/StressResultTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/StressResultTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StressResultTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/CustomTableStressResultTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/GetAttStressResultTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttStressResultTableStreamArn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/GetAttStressResultTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttStressResultTableName"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/StressResultIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResultIAMRole"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/StressResultIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StressResultIAMRole088F2C68"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResultIAMRole"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/StressResultDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResultTable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/StressResultDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StressResultDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResultTable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/QuerygetStressResultauth0Function/QuerygetStressResultauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetStressResultauth0FunctionQuerygetStressResultauth0FunctionAppSyncFunctionA367651D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetStressResultauth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/QuerygetStressResultpostAuth0Function/QuerygetStressResultpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetStressResultpostAuth0FunctionQuerygetStressResultpostAuth0FunctionAppSyncFunction037DD1F5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetStressResultpostAuth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/QueryGetStressResultDataResolverFn/QueryGetStressResultDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetStressResultDataResolverFnQueryGetStressResultDataResolverFnAppSyncFunctionFB152F9D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetStressResultDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/queryGetStressResultResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetStressResultResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getStressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/QuerylistStressResultsauth0Function/QuerylistStressResultsauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistStressResultsauth0FunctionQuerylistStressResultsauth0FunctionAppSyncFunctionD4AEA2BE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistStressResultsauth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/QuerylistStressResultspostAuth0Function/QuerylistStressResultspostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistStressResultspostAuth0FunctionQuerylistStressResultspostAuth0FunctionAppSyncFunction7D57CA9A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistStressResultspostAuth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/QueryListStressResultsDataResolverFn/QueryListStressResultsDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListStressResultsDataResolverFnQueryListStressResultsDataResolverFnAppSyncFunction2942AAD4"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListStressResultsDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/queryListStressResultsResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListStressResultResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listStressResults"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationcreateStressResultinit0Function/MutationcreateStressResultinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateStressResultinit0FunctionMutationcreateStressResultinit0FunctionAppSyncFunction3BB92ADF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateStressResultinit0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationcreateStressResultauth0Function/MutationcreateStressResultauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateStressResultauth0FunctionMutationcreateStressResultauth0FunctionAppSyncFunction6E6DCB9D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateStressResultauth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationcreateStressResultpostAuth0Function/MutationcreateStressResultpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateStressResultpostAuth0FunctionMutationcreateStressResultpostAuth0FunctionAppSyncFunctionEEBB6C4C"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateStressResultpostAuth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationCreateStressResultDataResolverFn/MutationCreateStressResultDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateStressResultDataResolverFnMutationCreateStressResultDataResolverFnAppSyncFunction9C59812D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateStressResultDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/mutationCreateStressResultResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateStressResultResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createStressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationupdateStressResultinit0Function/MutationupdateStressResultinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateStressResultinit0FunctionMutationupdateStressResultinit0FunctionAppSyncFunctionEBCC13E9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateStressResultinit0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationupdateStressResultauth0Function/MutationupdateStressResultauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateStressResultauth0FunctionMutationupdateStressResultauth0FunctionAppSyncFunction251FBDF5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateStressResultauth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationupdateStressResultpostAuth0Function/MutationupdateStressResultpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateStressResultpostAuth0FunctionMutationupdateStressResultpostAuth0FunctionAppSyncFunctionA12818F3"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateStressResultpostAuth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationUpdateStressResultDataResolverFn/MutationUpdateStressResultDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateStressResultDataResolverFnMutationUpdateStressResultDataResolverFnAppSyncFunction85D00CDE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateStressResultDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/mutationUpdateStressResultResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateStressResultResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateStressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationdeleteStressResultauth0Function/MutationdeleteStressResultauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteStressResultauth0FunctionMutationdeleteStressResultauth0FunctionAppSyncFunction34EE713B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteStressResultauth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationdeleteStressResultpostAuth0Function/MutationdeleteStressResultpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteStressResultpostAuth0FunctionMutationdeleteStressResultpostAuth0FunctionAppSyncFunctionDBB9BB64"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteStressResultpostAuth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/MutationDeleteStressResultDataResolverFn/MutationDeleteStressResultDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteStressResultDataResolverFnMutationDeleteStressResultDataResolverFnAppSyncFunctionF52C898D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteStressResultDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/mutationDeleteStressResultResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteStressResultResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteStressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptiononCreateStressResultauth0Function/SubscriptiononCreateStressResultauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateStressResultauth0FunctionSubscriptiononCreateStressResultauth0FunctionAppSyncFunction7AC5C2CB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateStressResultauth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptiononCreateStressResultpostAuth0Function/SubscriptiononCreateStressResultpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateStressResultpostAuth0FunctionSubscriptiononCreateStressResultpostAuth0FunctionAppSyncFunction31C19845"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateStressResultpostAuth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptionOnCreateStressResultDataResolverFn/SubscriptionOnCreateStressResultDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateStressResultDataResolverFnSubscriptionOnCreateStressResultDataResolverFnAppSyncFunction2BDB4876"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateStressResultDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/subscriptionOnCreateStressResultResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateStressResultResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateStressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptiononUpdateStressResultauth0Function/SubscriptiononUpdateStressResultauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateStressResultauth0FunctionSubscriptiononUpdateStressResultauth0FunctionAppSyncFunction92820E27"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateStressResultauth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptiononUpdateStressResultpostAuth0Function/SubscriptiononUpdateStressResultpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateStressResultpostAuth0FunctionSubscriptiononUpdateStressResultpostAuth0FunctionAppSyncFunctionADDBF9F7"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateStressResultpostAuth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptionOnUpdateStressResultDataResolverFn/SubscriptionOnUpdateStressResultDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateStressResultDataResolverFnSubscriptionOnUpdateStressResultDataResolverFnAppSyncFunction947FD43E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateStressResultDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/subscriptionOnUpdateStressResultResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateStressResultResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateStressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptiononDeleteStressResultauth0Function/SubscriptiononDeleteStressResultauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteStressResultauth0FunctionSubscriptiononDeleteStressResultauth0FunctionAppSyncFunction9BEE5963"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteStressResultauth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptiononDeleteStressResultpostAuth0Function/SubscriptiononDeleteStressResultpostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteStressResultpostAuth0FunctionSubscriptiononDeleteStressResultpostAuth0FunctionAppSyncFunctionC1368F00"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteStressResultpostAuth0Function"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/SubscriptionOnDeleteStressResultDataResolverFn/SubscriptionOnDeleteStressResultDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteStressResultDataResolverFnSubscriptionOnDeleteStressResultDataResolverFnAppSyncFunction025F9A83"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteStressResultDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/subscriptionOnDeleteStressResultResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteStressResultResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteStressResult"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/StressResultOwnerDataResolverFn/StressResultOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StressResultOwnerDataResolverFnStressResultOwnerDataResolverFnAppSyncFunctionA0429D68"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResultOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/stressResultOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "StressResultownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "StressResult.owner"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceFBA92595Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent293ED81DArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceFBA92595Outputsamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataAmplifyTableManagerTableMaF128A927"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPINONEDS6B234FA4Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPINONEDS6B234FA4Name"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/StressResult.NestedStack/StressResult.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataStressResultNestedStackStressResultNestedStackResource86498E7A"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnGenerateAiCommentLambdaDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "FnGenerateAiCommentLambdaDataSource"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnGenerateAiCommentLambdaDataSource/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FnGenerateAiCommentLambdaDataSourceServiceRoleEBF1D392"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnGenerateAiCommentLambdaDataSource/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FnGenerateAiCommentLambdaDataSourceServiceRoleDefaultPolicyD6AEE2E5"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnGenerateAiCommentLambdaDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FnGenerateAiCommentLambdaDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "FnGenerateAiCommentLambdaDataSource"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/InvokeFnGenerateAiCommentLambdaDataSource/InvokeFnGenerateAiCommentLambdaDataSource.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "InvokeFnGenerateAiCommentLambdaDataSourceInvokeFnGenerateAiCommentLambdaDataSourceAppSyncFunction94596EB0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "InvokeFnGenerateAiCommentLambdaDataSource"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/queryGenerateAiCommentResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygenerateAiCommentResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.generateAiComment"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/QueryGenerateAiCommentAuthFN/QueryGenerateAiCommentAuthFN.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGenerateAiCommentAuthFNQueryGenerateAiCommentAuthFNAppSyncFunction9760B73E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGenerateAiCommentAuthFN"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPINONEDS6B234FA4Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPINONEDS6B234FA4Name"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack.NestedStack/FunctionDirectiveStack.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataFunctionDirectiveStackNestedStackFunctionDirectiveStackNestedStackResource1246A302"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucket9CCB4ACA"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketPolicyF1C1C548"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucketAutoDeleteObjectsCustomResource437F26F5"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentAwsCliLayerE322F905"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB21775929"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-singleton",
+            "data": true
+          },
+          {
+            "type": "aws:cdk:is-custom-resource-handler-runtime-family",
+            "data": 2
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleA41FC8C2"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBServiceRoleDefaultPolicyFF1C635B"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiB/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C1536MiBC5D8AB21"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/modelIntrospectionSchemaBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketF566B665"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/modelIntrospectionSchemaBucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketPolicy4DAB0D15"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/modelIntrospectionSchemaBucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketAutoDeleteObjectsCustomResourceFE57309F"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/modelIntrospectionSchemaBucketDeployment/AwsCliLayer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketDeploymentAwsCliLayer13C432F7"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/modelIntrospectionSchemaBucketDeployment/CustomResource-1536MiB/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "modelIntrospectionSchemaBucketDeploymentCustomResource1536MiB104B97EC"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/AMPLIFY_DATA_GRAPHQL_ENDPOINTParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAGRAPHQLENDPOINTParameter1C2CBB16"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/AMPLIFY_DATA_MODEL_INTROSPECTION_SCHEMA_BUCKET_NAMEParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAMODELINTROSPECTIONSCHEMABUCKETNAMEParameter47BF4F44"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/AMPLIFY_DATA_MODEL_INTROSPECTION_SCHEMA_KEYParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATAMODELINTROSPECTIONSCHEMAKEYParameterB6AEAE8A"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/AMPLIFY_DATA_DEFAULT_NAMEParameter/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AMPLIFYDATADEFAULTNAMEParameterE7C23CC4"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthUserPool5FB8BE09Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthUserPool5FB8BE09Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5GraphQLUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5GraphQLUrl"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB58CDD193DestinationBucketArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsDeploymentCustomResource1536MiB58CDD193DestinationBucketArn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPIDefaultApiKeyDB028D69ApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPIDefaultApiKeyDB028D69ApiKey"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data.NestedStack/data.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "data7552DF31"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/handler-lambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "handlerlambdaServiceRole46D7AF61"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/handler-lambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "handlerlambdaServiceRoleDefaultPolicy3DA67D31"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/handler-lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "handlerlambdaE29D1580"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DRef": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DRef"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function.NestedStack/function.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "function1351588B"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/definedFunctions": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "definedFunctions"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/awsAppsyncApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiId"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/awsAppsyncApiEndpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiEndpoint"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/awsAppsyncAuthenticationType": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAuthenticationType"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/awsAppsyncRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncRegion"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/amplifyApiModelSchemaS3Uri": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyApiModelSchemaS3Uri"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/awsAppsyncApiKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncApiKey"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/awsAppsyncAdditionalAuthenticationTypes": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "awsAppsyncAdditionalAuthenticationTypes"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "aws-cdk-lib/feature-flag-report": {
+      "type": "cdk:feature-flag-report",
+      "properties": {
+        "module": "aws-cdk-lib",
+        "flags": {
+          "@aws-cdk/core:enableStackNameDuplicates": {
+            "recommendedValue": true,
+            "explanation": "Allow multiple stacks with the same name"
+          },
+          "aws-cdk:enableDiffNoFail": {
+            "recommendedValue": true,
+            "explanation": "Make `cdk diff` not fail when there are differences"
+          },
+          "@aws-cdk/core:newStyleStackSynthesis": {
+            "recommendedValue": true,
+            "explanation": "Switch to new stack synthesis method which enables CI/CD"
+          },
+          "@aws-cdk/core:stackRelativeExports": {
+            "recommendedValue": true,
+            "explanation": "Name exports based on the construct paths relative to the stack, rather than the global construct path"
+          },
+          "@aws-cdk/aws-ecr-assets:dockerIgnoreSupport": {
+            "recommendedValue": true,
+            "explanation": "DockerImageAsset properly supports `.dockerignore` files by default"
+          },
+          "@aws-cdk/aws-secretsmanager:parseOwnedSecretName": {
+            "recommendedValue": true,
+            "explanation": "Fix the referencing of SecretsManager names from ARNs"
+          },
+          "@aws-cdk/aws-kms:defaultKeyPolicies": {
+            "recommendedValue": true,
+            "explanation": "Tighten default KMS key policies"
+          },
+          "@aws-cdk/aws-s3:grantWriteWithoutAcl": {
+            "recommendedValue": true,
+            "explanation": "Remove `PutObjectAcl` from Bucket.grantWrite"
+          },
+          "@aws-cdk/aws-ecs-patterns:removeDefaultDesiredCount": {
+            "recommendedValue": true,
+            "explanation": "Do not specify a default DesiredCount for ECS services"
+          },
+          "@aws-cdk/aws-rds:lowercaseDbIdentifier": {
+            "recommendedValue": true,
+            "explanation": "Force lowercasing of RDS Cluster names in CDK"
+          },
+          "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": {
+            "recommendedValue": true,
+            "explanation": "Allow adding/removing multiple UsagePlanKeys independently"
+          },
+          "@aws-cdk/aws-efs:defaultEncryptionAtRest": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to have elastic file systems encrypted at rest by default."
+          },
+          "@aws-cdk/aws-lambda:recognizeVersionProps": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to opt in to the updated logical id calculation for Lambda Version created using the  `fn.currentVersion`."
+          },
+          "@aws-cdk/aws-lambda:recognizeLayerVersion": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to opt in to the updated logical id calculation for Lambda Version created using the `fn.currentVersion`."
+          },
+          "@aws-cdk/aws-cloudfront:defaultSecurityPolicyTLSv1.2_2021": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to have cloudfront distributions use the security policy TLSv1.2_2021 by default."
+          },
+          "@aws-cdk/core:checkSecretUsage": {
+            "recommendedValue": true,
+            "explanation": "Enable this flag to make it impossible to accidentally use SecretValues in unsafe locations"
+          },
+          "@aws-cdk/core:target-partitions": {
+            "recommendedValue": [
+              "aws",
+              "aws-cn"
+            ],
+            "explanation": "What regions to include in lookup tables of environment agnostic stacks"
+          },
+          "@aws-cdk-containers/ecs-service-extensions:enableDefaultLogDriver": {
+            "recommendedValue": true,
+            "explanation": "ECS extensions will automatically add an `awslogs` driver if no logging is specified"
+          },
+          "@aws-cdk/aws-ec2:uniqueImdsv2TemplateName": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to have Launch Templates generated by the `InstanceRequireImdsv2Aspect` use unique names."
+          },
+          "@aws-cdk/aws-ecs:arnFormatIncludesClusterName": {
+            "recommendedValue": true,
+            "explanation": "ARN format used by ECS. In the new ARN format, the cluster name is part of the resource ID."
+          },
+          "@aws-cdk/aws-iam:minimizePolicies": {
+            "recommendedValue": true,
+            "explanation": "Minimize IAM policies by combining Statements"
+          },
+          "@aws-cdk/core:validateSnapshotRemovalPolicy": {
+            "recommendedValue": true,
+            "explanation": "Error on snapshot removal policies on resources that do not support it."
+          },
+          "@aws-cdk/aws-codepipeline:crossAccountKeyAliasStackSafeResourceName": {
+            "recommendedValue": true,
+            "explanation": "Generate key aliases that include the stack name"
+          },
+          "@aws-cdk/aws-s3:createDefaultLoggingPolicy": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature flag to create an S3 bucket policy by default in cases where an AWS service would automatically create the Policy if one does not exist."
+          },
+          "@aws-cdk/aws-sns-subscriptions:restrictSqsDescryption": {
+            "recommendedValue": true,
+            "explanation": "Restrict KMS key policy for encrypted Queues a bit more"
+          },
+          "@aws-cdk/aws-apigateway:disableCloudWatchRole": {
+            "recommendedValue": true,
+            "explanation": "Make default CloudWatch Role behavior safe for multiple API Gateways in one environment"
+          },
+          "@aws-cdk/core:enablePartitionLiterals": {
+            "recommendedValue": true,
+            "explanation": "Make ARNs concrete if AWS partition is known"
+          },
+          "@aws-cdk/aws-events:eventsTargetQueueSameAccount": {
+            "recommendedValue": true,
+            "explanation": "Event Rules may only push to encrypted SQS queues in the same account"
+          },
+          "@aws-cdk/aws-ecs:disableExplicitDeploymentControllerForCircuitBreaker": {
+            "recommendedValue": true,
+            "explanation": "Avoid setting the \"ECS\" deployment controller when adding a circuit breaker"
+          },
+          "@aws-cdk/aws-iam:importedRoleStackSafeDefaultPolicyName": {
+            "recommendedValue": true,
+            "explanation": "Enable this feature to by default create default policy names for imported roles that depend on the stack the role is in."
+          },
+          "@aws-cdk/aws-s3:serverAccessLogsUseBucketPolicy": {
+            "recommendedValue": true,
+            "explanation": "Use S3 Bucket Policy instead of ACLs for Server Access Logging"
+          },
+          "@aws-cdk/aws-route53-patters:useCertificate": {
+            "recommendedValue": true,
+            "explanation": "Use the official `Certificate` resource instead of `DnsValidatedCertificate`"
+          },
+          "@aws-cdk/customresources:installLatestAwsSdkDefault": {
+            "recommendedValue": false,
+            "explanation": "Whether to install the latest SDK by default in AwsCustomResource"
+          },
+          "@aws-cdk/aws-rds:databaseProxyUniqueResourceName": {
+            "recommendedValue": true,
+            "explanation": "Use unique resource name for Database Proxy"
+          },
+          "@aws-cdk/aws-codedeploy:removeAlarmsFromDeploymentGroup": {
+            "recommendedValue": true,
+            "explanation": "Remove CloudWatch alarms from deployment group"
+          },
+          "@aws-cdk/aws-apigateway:authorizerChangeDeploymentLogicalId": {
+            "recommendedValue": true,
+            "explanation": "Include authorizer configuration in the calculation of the API deployment logical ID."
+          },
+          "@aws-cdk/aws-ec2:launchTemplateDefaultUserData": {
+            "recommendedValue": true,
+            "explanation": "Define user data for a launch template by default when a machine image is provided."
+          },
+          "@aws-cdk/aws-secretsmanager:useAttachedSecretResourcePolicyForSecretTargetAttachments": {
+            "recommendedValue": true,
+            "explanation": "SecretTargetAttachments uses the ResourcePolicy of the attached Secret."
+          },
+          "@aws-cdk/aws-redshift:columnId": {
+            "recommendedValue": true,
+            "explanation": "Whether to use an ID to track Redshift column changes"
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:enableEmrServicePolicyV2": {
+            "recommendedValue": true,
+            "explanation": "Enable AmazonEMRServicePolicy_v2 managed policies"
+          },
+          "@aws-cdk/aws-ec2:restrictDefaultSecurityGroup": {
+            "recommendedValue": true,
+            "explanation": "Restrict access to the VPC default security group"
+          },
+          "@aws-cdk/aws-apigateway:requestValidatorUniqueId": {
+            "recommendedValue": true,
+            "explanation": "Generate a unique id for each RequestValidator added to a method"
+          },
+          "@aws-cdk/aws-kms:aliasNameRef": {
+            "recommendedValue": true,
+            "explanation": "KMS Alias name and keyArn will have implicit reference to KMS Key"
+          },
+          "@aws-cdk/aws-kms:applyImportedAliasPermissionsToPrincipal": {
+            "recommendedValue": true,
+            "explanation": "Enable grant methods on Aliases imported by name to use kms:ResourceAliases condition"
+          },
+          "@aws-cdk/aws-autoscaling:generateLaunchTemplateInsteadOfLaunchConfig": {
+            "recommendedValue": true,
+            "explanation": "Generate a launch template when creating an AutoScalingGroup"
+          },
+          "@aws-cdk/core:includePrefixInUniqueNameGeneration": {
+            "recommendedValue": true,
+            "explanation": "Include the stack prefix in the stack name generation process"
+          },
+          "@aws-cdk/aws-efs:denyAnonymousAccess": {
+            "recommendedValue": true,
+            "explanation": "EFS denies anonymous clients accesses"
+          },
+          "@aws-cdk/aws-opensearchservice:enableOpensearchMultiAzWithStandby": {
+            "recommendedValue": true,
+            "explanation": "Enables support for Multi-AZ with Standby deployment for opensearch domains"
+          },
+          "@aws-cdk/aws-lambda-nodejs:useLatestRuntimeVersion": {
+            "recommendedValue": true,
+            "explanation": "Enables aws-lambda-nodejs.Function to use the latest available NodeJs runtime as the default"
+          },
+          "@aws-cdk/aws-efs:mountTargetOrderInsensitiveLogicalId": {
+            "recommendedValue": true,
+            "explanation": "When enabled, mount targets will have a stable logicalId that is linked to the associated subnet."
+          },
+          "@aws-cdk/aws-rds:auroraClusterChangeScopeOfInstanceParameterGroupWithEachParameters": {
+            "recommendedValue": true,
+            "explanation": "When enabled, a scope of InstanceParameterGroup for AuroraClusterInstance with each parameters will change."
+          },
+          "@aws-cdk/aws-appsync:useArnForSourceApiAssociationIdentifier": {
+            "recommendedValue": true,
+            "explanation": "When enabled, will always use the arn for identifiers for CfnSourceApiAssociation in the GraphqlApi construct rather than id."
+          },
+          "@aws-cdk/aws-rds:preventRenderingDeprecatedCredentials": {
+            "recommendedValue": true,
+            "explanation": "When enabled, creating an RDS database cluster from a snapshot will only render credentials for snapshot credentials."
+          },
+          "@aws-cdk/aws-codepipeline-actions:useNewDefaultBranchForCodeCommitSource": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the CodeCommit source action is using the default branch name 'main'."
+          },
+          "@aws-cdk/aws-cloudwatch-actions:changeLambdaPermissionLogicalIdForLambdaAction": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the logical ID of a Lambda permission for a Lambda action includes an alarm ID."
+          },
+          "@aws-cdk/aws-codepipeline:crossAccountKeysDefaultValueToFalse": {
+            "recommendedValue": true,
+            "explanation": "Enables Pipeline to set the default value for crossAccountKeys to false."
+          },
+          "@aws-cdk/aws-codepipeline:defaultPipelineTypeToV2": {
+            "recommendedValue": true,
+            "explanation": "Enables Pipeline to set the default pipeline type to V2."
+          },
+          "@aws-cdk/aws-kms:reduceCrossAccountRegionPolicyScope": {
+            "recommendedValue": true,
+            "explanation": "When enabled, IAM Policy created from KMS key grant will reduce the resource scope to this key only."
+          },
+          "@aws-cdk/pipelines:reduceAssetRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "Remove the root account principal from PipelineAssetsFileRole trust policy"
+          },
+          "@aws-cdk/aws-eks:nodegroupNameAttribute": {
+            "recommendedValue": true,
+            "explanation": "When enabled, nodegroupName attribute of the provisioned EKS NodeGroup will not have the cluster name prefix."
+          },
+          "@aws-cdk/aws-ec2:ebsDefaultGp3Volume": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the default volume type of the EBS volume will be GP3"
+          },
+          "@aws-cdk/aws-ecs:removeDefaultDeploymentAlarm": {
+            "recommendedValue": true,
+            "explanation": "When enabled, remove default deployment alarm settings"
+          },
+          "@aws-cdk/custom-resources:logApiResponseDataPropertyTrueDefault": {
+            "recommendedValue": false,
+            "explanation": "When enabled, the custom resource used for `AwsCustomResource` will configure the `logApiResponseData` property as true by default"
+          },
+          "@aws-cdk/aws-s3:keepNotificationInImportedBucket": {
+            "recommendedValue": false,
+            "explanation": "When enabled, Adding notifications to a bucket in the current stack will not remove notification from imported stack."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:useNewS3UriParametersForBedrockInvokeModelTask": {
+            "recommendedValue": true,
+            "explanation": "When enabled, use new props for S3 URI field in task definition of state machine for bedrock invoke model."
+          },
+          "@aws-cdk/core:explicitStackTags": {
+            "recommendedValue": true,
+            "explanation": "When enabled, stack tags need to be assigned explicitly on a Stack."
+          },
+          "@aws-cdk/aws-ecs:enableImdsBlockingDeprecatedFeature": {
+            "recommendedValue": false,
+            "explanation": "When set to true along with canContainersAccessInstanceRole=false in ECS cluster, new updated commands will be added to UserData to block container accessing IMDS. **Applicable to Linux only. IMPORTANT: See [details.](#aws-cdkaws-ecsenableImdsBlockingDeprecatedFeature)**"
+          },
+          "@aws-cdk/aws-ecs:disableEcsImdsBlocking": {
+            "recommendedValue": true,
+            "explanation": "When set to true, CDK synth will throw exception if canContainersAccessInstanceRole is false. **IMPORTANT: See [details.](#aws-cdkaws-ecsdisableEcsImdsBlocking)**"
+          },
+          "@aws-cdk/aws-ecs:reduceEc2FargateCloudWatchPermissions": {
+            "recommendedValue": true,
+            "explanation": "When enabled, we will only grant the necessary permissions when users specify cloudwatch log group through logConfiguration"
+          },
+          "@aws-cdk/aws-dynamodb:resourcePolicyPerReplica": {
+            "recommendedValue": true,
+            "explanation": "When enabled will allow you to specify a resource policy per replica, and not copy the source table policy to all replicas"
+          },
+          "@aws-cdk/aws-ec2:ec2SumTImeoutEnabled": {
+            "recommendedValue": true,
+            "explanation": "When enabled, initOptions.timeout and resourceSignalTimeout values will be summed together."
+          },
+          "@aws-cdk/aws-appsync:appSyncGraphQLAPIScopeLambdaPermission": {
+            "recommendedValue": true,
+            "explanation": "When enabled, a Lambda authorizer Permission created when using GraphqlApi will be properly scoped with a SourceArn."
+          },
+          "@aws-cdk/aws-rds:setCorrectValueForDatabaseInstanceReadReplicaInstanceResourceId": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the value of property `instanceResourceId` in construct `DatabaseInstanceReadReplica` will be set to the correct value which is `DbiResourceId` instead of currently `DbInstanceArn`"
+          },
+          "@aws-cdk/core:cfnIncludeRejectComplexResourceUpdateCreatePolicyIntrinsics": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CFN templates added with `cfn-include` will error if the template contains Resource Update or Create policies with CFN Intrinsics that include non-primitive values."
+          },
+          "@aws-cdk/aws-lambda-nodejs:sdkV3ExcludeSmithyPackages": {
+            "recommendedValue": true,
+            "explanation": "When enabled, both `@aws-sdk` and `@smithy` packages will be excluded from the Lambda Node.js 18.x runtime to prevent version mismatches in bundled applications."
+          },
+          "@aws-cdk/aws-stepfunctions-tasks:fixRunEcsTaskPolicy": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the resource of IAM Run Ecs policy generated by SFN EcsRunTask will reference the definition, instead of constructing ARN."
+          },
+          "@aws-cdk/aws-ec2:bastionHostUseAmazonLinux2023ByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the BastionHost construct will use the latest Amazon Linux 2023 AMI, instead of Amazon Linux 2."
+          },
+          "@aws-cdk/core:aspectStabilization": {
+            "recommendedValue": true,
+            "explanation": "When enabled, a stabilization loop will be run when invoking Aspects during synthesis."
+          },
+          "@aws-cdk/aws-route53-targets:userPoolDomainNameMethodWithoutCustomResource": {
+            "recommendedValue": true,
+            "explanation": "When enabled, use a new method for DNS Name of user pool domain target without creating a custom resource."
+          },
+          "@aws-cdk/aws-elasticloadbalancingV2:albDualstackWithoutPublicIpv4SecurityGroupRulesDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the default security group ingress rules will allow IPv6 ingress from anywhere"
+          },
+          "@aws-cdk/aws-iam:oidcRejectUnauthorizedConnections": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the default behaviour of OIDC provider will reject unauthorized connections"
+          },
+          "@aws-cdk/core:enableAdditionalMetadataCollection": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK will expand the scope of usage data collected to better inform CDK development and improve communication for security concerns and emerging issues."
+          },
+          "@aws-cdk/aws-lambda:createNewPoliciesWithAddToRolePolicy": {
+            "recommendedValue": false,
+            "explanation": "[Deprecated] When enabled, Lambda will create new inline policies with AddToRolePolicy instead of adding to the Default Policy Statement"
+          },
+          "@aws-cdk/aws-s3:setUniqueReplicationRoleName": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK will automatically generate a unique role name that is used for s3 object replication."
+          },
+          "@aws-cdk/pipelines:reduceStageRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "Remove the root account principal from Stage addActions trust policy"
+          },
+          "@aws-cdk/aws-events:requireEventBusPolicySid": {
+            "recommendedValue": true,
+            "explanation": "When enabled, grantPutEventsTo() will use resource policies with Statement IDs for service principals."
+          },
+          "@aws-cdk/core:aspectPrioritiesMutating": {
+            "recommendedValue": true,
+            "explanation": "When set to true, Aspects added by the construct library on your behalf will be given a priority of MUTATING."
+          },
+          "@aws-cdk/aws-dynamodb:retainTableReplica": {
+            "recommendedValue": true,
+            "explanation": "When enabled, table replica will be default to the removal policy of source table unless specified otherwise."
+          },
+          "@aws-cdk/cognito:logUserPoolClientSecretValue": {
+            "recommendedValue": false,
+            "explanation": "When disabled, the value of the user pool client secret will not be logged in the custom resource lambda function logs."
+          },
+          "@aws-cdk/pipelines:reduceCrossAccountActionRoleTrustScope": {
+            "recommendedValue": true,
+            "explanation": "When enabled, scopes down the trust policy for the cross-account action role"
+          },
+          "@aws-cdk/aws-stepfunctions:useDistributedMapResultWriterV2": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the resultWriterV2 property of DistributedMap will be used insted of resultWriter"
+          },
+          "@aws-cdk/s3-notifications:addS3TrustKeyPolicyForSnsSubscriptions": {
+            "recommendedValue": true,
+            "explanation": "Add an S3 trust policy to a KMS key resource policy for SNS subscriptions."
+          },
+          "@aws-cdk/aws-ec2:requirePrivateSubnetsForEgressOnlyInternetGateway": {
+            "recommendedValue": true,
+            "explanation": "When enabled, the EgressOnlyGateway resource is only created if private subnets are defined in the dual-stack VPC."
+          },
+          "@aws-cdk/aws-ec2-alpha:useResourceIdForVpcV2Migration": {
+            "recommendedValue": false,
+            "explanation": "When enabled, use resource IDs for VPC V2 migration"
+          },
+          "@aws-cdk/aws-s3:publicAccessBlockedByDefault": {
+            "recommendedValue": true,
+            "explanation": "When enabled, setting any combination of options for BlockPublicAccess will automatically set true for any options not defined."
+          },
+          "@aws-cdk/aws-lambda:useCdkManagedLogGroup": {
+            "recommendedValue": true,
+            "explanation": "When enabled, CDK creates and manages loggroup for the lambda function"
+          }
+        }
+      }
+    }
+  },
+  "minimumCliVersion": "2.1020.2"
+}

@@ -1,0 +1,20 @@
+type StressResult @model @auth(rules: [{allow: owner, ownerField: "owner"},
+  {allow: private, operations: [read]}])
+{
+  userId: String!
+  userName: String
+  department: String
+  age: Int
+  scoreA: Int!
+  scoreB: Int!
+  scoreC: Int!
+  total: Int!
+  highStress: Boolean!
+  testDate: AWSDateTime!
+  responses: AWSJSON
+  aiComment: String
+}
+
+type Query {
+  generateAiComment(scoreA: Int!, scoreB: Int!, scoreC: Int!, total: Int!, highStress: Boolean!, userName: String, department: String): AWSJSON @function(name: "FnGenerateAiComment") @auth(rules: [{allow: public, provider: apiKey}])
+}

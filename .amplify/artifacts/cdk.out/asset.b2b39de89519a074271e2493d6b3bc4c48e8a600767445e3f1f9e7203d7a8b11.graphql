@@ -1,0 +1,296 @@
+type StressResult @aws_iam @aws_cognito_user_pools {
+  userId: String!
+  userName: String
+  department: String
+  age: Int
+  scoreA: Int!
+  scoreB: Int!
+  scoreC: Int!
+  total: Int!
+  highStress: Boolean!
+  testDate: AWSDateTime!
+  responses: AWSJSON
+  aiComment: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Query @aws_iam {
+  getStressResult(id: ID!): StressResult @aws_iam @aws_cognito_user_pools
+  listStressResults(filter: ModelStressResultFilterInput, limit: Int, nextToken: String): ModelStressResultConnection @aws_iam @aws_cognito_user_pools
+  generateAiComment(scoreA: Int!, scoreB: Int!, scoreC: Int!, total: Int!, highStress: Boolean!, userName: String, department: String, age: Int, gender: String, subscaleScores: AWSJSON!): AWSJSON @aws_iam @aws_api_key
+}
+
+input AmplifyAIConversationTurnErrorInput {
+  errorType: String!
+  message: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelStressResultConnection @aws_iam @aws_cognito_user_pools {
+  items: [StressResult]!
+  nextToken: String
+}
+
+input ModelStressResultFilterInput {
+  userId: ModelStringInput
+  userName: ModelStringInput
+  department: ModelStringInput
+  age: ModelIntInput
+  scoreA: ModelIntInput
+  scoreB: ModelIntInput
+  scoreC: ModelIntInput
+  total: ModelIntInput
+  highStress: ModelBooleanInput
+  testDate: ModelStringInput
+  responses: ModelStringInput
+  aiComment: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelStressResultFilterInput]
+  or: [ModelStressResultFilterInput]
+  not: ModelStressResultFilterInput
+  owner: ModelStringInput
+}
+
+input ModelStressResultConditionInput {
+  userId: ModelStringInput
+  userName: ModelStringInput
+  department: ModelStringInput
+  age: ModelIntInput
+  scoreA: ModelIntInput
+  scoreB: ModelIntInput
+  scoreC: ModelIntInput
+  total: ModelIntInput
+  highStress: ModelBooleanInput
+  testDate: ModelStringInput
+  responses: ModelStringInput
+  aiComment: ModelStringInput
+  and: [ModelStressResultConditionInput]
+  or: [ModelStressResultConditionInput]
+  not: ModelStressResultConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateStressResultInput {
+  userId: String!
+  userName: String
+  department: String
+  age: Int
+  scoreA: Int!
+  scoreB: Int!
+  scoreC: Int!
+  total: Int!
+  highStress: Boolean!
+  testDate: AWSDateTime!
+  responses: AWSJSON
+  aiComment: String
+  id: ID
+}
+
+input UpdateStressResultInput {
+  userId: String
+  userName: String
+  department: String
+  age: Int
+  scoreA: Int
+  scoreB: Int
+  scoreC: Int
+  total: Int
+  highStress: Boolean
+  testDate: AWSDateTime
+  responses: AWSJSON
+  aiComment: String
+  id: ID!
+}
+
+input DeleteStressResultInput {
+  id: ID!
+}
+
+type Mutation {
+  createStressResult(input: CreateStressResultInput!, condition: ModelStressResultConditionInput): StressResult @aws_iam @aws_cognito_user_pools
+  updateStressResult(input: UpdateStressResultInput!, condition: ModelStressResultConditionInput): StressResult @aws_iam @aws_cognito_user_pools
+  deleteStressResult(input: DeleteStressResultInput!, condition: ModelStressResultConditionInput): StressResult @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionStressResultFilterInput {
+  userId: ModelSubscriptionStringInput
+  userName: ModelSubscriptionStringInput
+  department: ModelSubscriptionStringInput
+  age: ModelSubscriptionIntInput
+  scoreA: ModelSubscriptionIntInput
+  scoreB: ModelSubscriptionIntInput
+  scoreC: ModelSubscriptionIntInput
+  total: ModelSubscriptionIntInput
+  highStress: ModelSubscriptionBooleanInput
+  testDate: ModelSubscriptionStringInput
+  responses: ModelSubscriptionStringInput
+  aiComment: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionStressResultFilterInput]
+  or: [ModelSubscriptionStressResultFilterInput]
+  owner: ModelStringInput
+}
+
+type Subscription {
+  onCreateStressResult(filter: ModelSubscriptionStressResultFilterInput, owner: String): StressResult @aws_subscribe(mutations: ["createStressResult"]) @aws_iam @aws_cognito_user_pools
+  onUpdateStressResult(filter: ModelSubscriptionStressResultFilterInput, owner: String): StressResult @aws_subscribe(mutations: ["updateStressResult"]) @aws_iam @aws_cognito_user_pools
+  onDeleteStressResult(filter: ModelSubscriptionStressResultFilterInput, owner: String): StressResult @aws_subscribe(mutations: ["deleteStressResult"]) @aws_iam @aws_cognito_user_pools
+}

@@ -1,0 +1,12 @@
+{
+  "name": "stress-ai-comment",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.859.0",
+    "@types/aws-lambda": "^8.10.131"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

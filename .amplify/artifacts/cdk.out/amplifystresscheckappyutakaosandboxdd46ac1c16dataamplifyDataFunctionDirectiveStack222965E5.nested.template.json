@@ -1,0 +1,530 @@
+{
+ "Description": "An auto-generated nested stack for the @function directive.",
+ "AWSTemplateFormatVersion": "2010-09-09",
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "FnGenerateAiCommentLambdaDataSourceServiceRoleEBF1D392": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnGenerateAiCommentLambdaDataSource/ServiceRole/Resource"
+   }
+  },
+  "FnGenerateAiCommentLambdaDataSourceServiceRoleDefaultPolicyD6AEE2E5": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "lambda:InvokeFunction",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
+           },
+           ":*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "FnGenerateAiCommentLambdaDataSourceServiceRoleDefaultPolicyD6AEE2E5",
+    "Roles": [
+     {
+      "Ref": "FnGenerateAiCommentLambdaDataSourceServiceRoleEBF1D392"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnGenerateAiCommentLambdaDataSource/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "FnGenerateAiCommentLambdaDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId"
+    },
+    "LambdaConfig": {
+     "LambdaFunctionArn": {
+      "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
+     }
+    },
+    "Name": "FnGenerateAiCommentLambdaDataSource",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "FnGenerateAiCommentLambdaDataSourceServiceRoleEBF1D392",
+      "Arn"
+     ]
+    },
+    "Type": "AWS_LAMBDA"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnGenerateAiCommentLambdaDataSource/Resource"
+   }
+  },
+  "InvokeFnGenerateAiCommentLambdaDataSourceInvokeFnGenerateAiCommentLambdaDataSourceAppSyncFunction94596EB0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "FnGenerateAiCommentLambdaDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "InvokeFnGenerateAiCommentLambdaDataSource",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3737a4cc9f3b156f8d2d1f5456532637da99815ee1b147f5ff56b95d0f376b8b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a20e304512b1fde77dc16ed9d5e0ed03817afcab629ce87ef11c99877b7b1e30.vtl"
+    }
+   },
+   "DependsOn": [
+    "FnGenerateAiCommentLambdaDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/InvokeFnGenerateAiCommentLambdaDataSource/InvokeFnGenerateAiCommentLambdaDataSource.AppSyncFunction"
+   }
+  },
+  "QuerygenerateAiCommentResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId"
+    },
+    "FieldName": "generateAiComment",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QueryGenerateAiCommentAuthFNQueryGenerateAiCommentAuthFNAppSyncFunction9760B73E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "InvokeFnGenerateAiCommentLambdaDataSourceInvokeFnGenerateAiCommentLambdaDataSourceAppSyncFunction94596EB0",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "## [Start] Stash resolver specific context.. **\n$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"generateAiComment\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:aws:sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n{}\n## [End] Stash resolver specific context.. **"
+      ]
+     ]
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/387d5992f5fc03d05de27289457dcc374a84c42a889acb504aff1031047dde00.vtl"
+    },
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/queryGenerateAiCommentResolver"
+   }
+  },
+  "QueryGenerateAiCommentAuthFNQueryGenerateAiCommentAuthFNAppSyncFunction9760B73E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPINONEDS6B234FA4Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGenerateAiCommentAuthFN",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/830fd5a473c43e78ac02d7ec373d9543ca16c5b96b72acdde27ccd8277dec3f2.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/QueryGenerateAiCommentAuthFN/QueryGenerateAiCommentAuthFN.AppSyncFunction"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WNTY7CMAyFz8I+9UAR0myhiBVCqD0AMolbmbYOqhMQqnr3UcJqVp+f/H5KKNe/sF7hWwvr+mLgO8wX0kCuCWh7U7VSeXEc2IvBt95mfD71IxbmM453h0cM2Pg4WUre/+oUxaZg5aXlLk6YW6pWalI/vGhaDOMIc+2H7M+8+oHtJ8nvtRjd3lCVgsI+wegWDtH2FA6otJhUlhfztwnYsXSLEe8IHvrzKkvY7GCzeihzMUUJPBLUX/4BBtiy2gABAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Parameters": {
+  "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": {
+   "Type": "String"
+  },
+  "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthauthenticatedUserRoleE1273294Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthunauthenticatedUserRoleFCF40288Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPINONEDS6B234FA4Name": {
+   "Type": "String"
+  }
+ }
+}
