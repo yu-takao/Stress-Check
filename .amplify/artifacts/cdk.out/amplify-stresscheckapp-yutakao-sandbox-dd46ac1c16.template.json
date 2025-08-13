@@ -155,6 +155,27 @@
         "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DRef"
        ]
       },
+      "\",\"",
+      {
+       "Fn::GetAtt": [
+        "function1351588B",
+        "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Ref"
+       ]
+      },
+      "\",\"",
+      {
+       "Fn::GetAtt": [
+        "function1351588B",
+        "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Ref"
+       ]
+      },
+      "\",\"",
+      {
+       "Fn::GetAtt": [
+        "function1351588B",
+        "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Ref"
+       ]
+      },
       "\"]"
      ]
     ]
@@ -304,10 +325,28 @@
        "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
       ]
      },
+     "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn": {
+      "Fn::GetAtt": [
+       "function1351588B",
+       "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn"
+      ]
+     },
+     "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn": {
+      "Fn::GetAtt": [
+       "function1351588B",
+       "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn"
+      ]
+     },
      "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": {
       "Fn::GetAtt": [
        "function1351588B",
        "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
+      ]
+     },
+     "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn": {
+      "Fn::GetAtt": [
+       "function1351588B",
+       "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn"
       ]
      }
     },
@@ -337,7 +376,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/32023b90a1017811198889a16387bd7f40b7512121bdb7cdc0d3d9901385eb50.json"
+       "/4be4ea83d41807886b1a661938ad6ed5379d0c1d0550590b087071e69b965b83.json"
       ]
      ]
     }
@@ -379,7 +418,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/465c22aa901370009f733d47bb2a9f663d01735066a7d6bf958e391c96923ef5.json"
+       "/c778831abeea85e51c09f5311536b4c7a6adb518a230b4c07ca5ec5daca67113.json"
       ]
      ]
     }
@@ -392,10 +431,200 @@
     "aws:asset:property": "TemplateURL"
    }
   },
+  "KnowledgeBaseBucketC011DD60": {
+   "Type": "AWS::S3::Bucket",
+   "Properties": {
+    "BucketEncryption": {
+     "ServerSideEncryptionConfiguration": [
+      {
+       "ServerSideEncryptionByDefault": {
+        "SSEAlgorithm": "AES256"
+       }
+      }
+     ]
+    },
+    "CorsConfiguration": {
+     "CorsRules": [
+      {
+       "AllowedHeaders": [
+        "*"
+       ],
+       "AllowedMethods": [
+        "GET",
+        "PUT",
+        "HEAD"
+       ],
+       "AllowedOrigins": [
+        "*"
+       ],
+       "ExposedHeaders": [
+        "ETag"
+       ],
+       "MaxAge": 3000
+      }
+     ]
+    },
+    "PublicAccessBlockConfiguration": {
+     "BlockPublicAcls": true,
+     "BlockPublicPolicy": true,
+     "IgnorePublicAcls": true,
+     "RestrictPublicBuckets": true
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/KnowledgeBaseBucket/Resource"
+   }
+  },
+  "KnowledgeBaseBucketPolicyB9428EE4": {
+   "Type": "AWS::S3::BucketPolicy",
+   "Properties": {
+    "Bucket": {
+     "Ref": "KnowledgeBaseBucketC011DD60"
+    },
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:*",
+       "Condition": {
+        "Bool": {
+         "aws:SecureTransport": "false"
+        }
+       },
+       "Effect": "Deny",
+       "Principal": {
+        "AWS": "*"
+       },
+       "Resource": [
+        {
+         "Fn::GetAtt": [
+          "KnowledgeBaseBucketC011DD60",
+          "Arn"
+         ]
+        },
+        {
+         "Fn::Join": [
+          "",
+          [
+           {
+            "Fn::GetAtt": [
+             "KnowledgeBaseBucketC011DD60",
+             "Arn"
+            ]
+           },
+           "/*"
+          ]
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/KnowledgeBaseBucket/Policy/Resource"
+   }
+  },
+  "BedrockKbDataAccessRole85768A42": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "bedrock.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Description": "Allows Bedrock Knowledge Bases to read documents from the S3 knowledge bucket",
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/BedrockKbDataAccessRole/Resource"
+   }
+  },
+  "BedrockKbDataAccessRoleDefaultPolicy8CFE18C2": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:ListBucket",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::GetAtt": [
+         "KnowledgeBaseBucketC011DD60",
+         "Arn"
+        ]
+       }
+      },
+      {
+       "Action": "s3:GetObject",
+       "Effect": "Allow",
+       "Resource": {
+        "Fn::Join": [
+         "",
+         [
+          {
+           "Fn::GetAtt": [
+            "KnowledgeBaseBucketC011DD60",
+            "Arn"
+           ]
+          },
+          "/knowledge/*"
+         ]
+        ]
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "BedrockKbDataAccessRoleDefaultPolicy8CFE18C2",
+    "Roles": [
+     {
+      "Ref": "BedrockKbDataAccessRole85768A42"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/BedrockKbDataAccessRole/DefaultPolicy/Resource"
+   }
+  },
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzKw0DNQTCwv1k1OydbNyUzSqw4uSUzO1nFOy/MvLSkoLQGxwEK1Onn5Kal6WcX6ZUZGeoameoaKWcWZmbpFpXklmbmpekEQGgC4v/VhVAAAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/0WKQQ7CIBREz9I9fFuMiWs9gAYPYJB+EwoF0w82hnB309KkqzfzZgSI9gxto2biurfcmRfkR1Tasuvb31L8pLikqtRMz0xHyJekLa7DliruwRn923XthRk1QpbB4TKt3J/bpzCJFNKksTAfeoSBDl8hoDtB1wxkDJ+Sj2ZEkJV/n0404boAAAA="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/CDKMetadata/Default"

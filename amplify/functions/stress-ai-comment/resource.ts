@@ -5,6 +5,7 @@ export const stressAiComment = defineFunction({
   environment: {
     // Bedrock APIのリージョン設定
     BEDROCK_REGION: 'us-east-1', // Claude 3.5 Sonnetが利用可能なリージョン
+    KB_ID: 'ULSAODWWKY',
   },
   timeoutSeconds: 60, // AI処理のため長めに設定
 });

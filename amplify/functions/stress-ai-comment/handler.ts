@@ -1,4 +1,5 @@
 import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedrock-runtime';
+import { BedrockAgentRuntimeClient, RetrieveCommand } from '@aws-sdk/client-bedrock-agent-runtime';
 import type { Schema } from '../../data/resource';
 
 interface StressScores {
@@ -14,6 +15,11 @@ const bedrockClient = new BedrockRuntimeClient({
   region: process.env.BEDROCK_REGION || 'us-east-1',
 });
 
+// Knowledge Bases 用クライアント
+const bedrockAgentClient = new BedrockAgentRuntimeClient({
+  region: process.env.BEDROCK_REGION || process.env.AWS_REGION || 'us-east-1',
+});
+
 /**
  * ストレススコアに基づいてAIコメントを生成する関数 (GraphQL Query Handler)
  */
@@ -27,7 +33,9 @@ export const handler: Schema['generateAiComment']['functionHandler'] = async (ev
     });
 
     const { scoreA, scoreB, scoreC, total, highStress, userName, department, subscaleScores } = event.arguments;
+    const isCluster = (event.arguments as any).isCluster === true;
     const age = (event.arguments as any).age as number | undefined;
+    const yearsOfService = (event.arguments as any).yearsOfService as number | undefined;
     const gender = (event.arguments as any).gender as 'male' | 'female' | undefined;
 
     // スコアオブジェクトを構築
@@ -50,15 +58,36 @@ export const handler: Schema['generateAiComment']['functionHandler'] = async (ev
   parsedSubscaleScores,
   userName || undefined,
   department || undefined,
+  yearsOfService,
   age,
-  gender as 'male' | 'female'
+  gender as 'male' | 'female',
+  isCluster === true
 );
     console.log('Generated prompt length:', prompt.length);
     console.log('Prompt preview:', prompt.substring(0, 200) + '...');
 
+    // RAG: Knowledge Base から参考資料を取得（設定されている場合のみ）
+    const kbId = process.env.KB_ID as string | undefined;
+    let finalPrompt = prompt;
+    if (kbId) {
+      const query = buildRetrieveQuery(parsedSubscaleScores, (department ?? undefined) as string | undefined, isCluster === true);
+      console.log('RAG query:', query);
+      const contexts = await retrieveContexts(query ?? '', 3);
+      if (contexts.length > 0) {
+        const refBlock = contexts
+          .map((c, i) => `［${i + 1}］${truncate(c.text, 700)}\n出典: ${c.source ?? '不明'}（score: ${(c.score ?? 0).toFixed(3)}）`)
+          .join('\n\n');
+        finalPrompt = `${prompt}\n\n【参考資料】\n${refBlock}\n\n上記の参考資料を根拠として、矛盾があれば資料を優先してください。`;
+      } else {
+        console.log('RAG: no contexts retrieved');
+      }
+    } else {
+      console.log('RAG disabled: KB_ID is not set');
+    }
+
     // Claude 3.5 Sonnet でコメント生成
     console.log('Calling Bedrock API...');
-    const aiComment = await generateAiComment(prompt);
+    const aiComment = await generateAiComment(finalPrompt);
     console.log('AI comment generated successfully, length:', aiComment.length);
 
     const analysisDetails = analyzeStressLevel(scores);
@@ -67,7 +96,7 @@ export const handler: Schema['generateAiComment']['functionHandler'] = async (ev
     const result = {
       success: true,
       aiComment,
-      prompt,
+      prompt: finalPrompt,
       scores,
       analysisDetails,
     };
@@ -154,6 +183,52 @@ function getPriorityScales(
   return scales;
 }
 
+// 参考資料検索用に質問文を組み立て
+function buildRetrieveQuery(
+  subscaleScores: Record<string, { raw: number; eval: number; label: string; reverse?: boolean }>,
+  department?: string,
+  isCluster?: boolean
+): string {
+  const focus = Object.values(subscaleScores)
+    .map((s) => ({ label: s.label, risk: s.reverse ? 6 - s.eval : s.eval }))
+    .filter((s) => s.risk > 3)
+    .sort((a, b) => b.risk - a.risk)
+    .slice(0, 5)
+    .map((s) => s.label)
+    .join('、');
+  const target = isCluster ? `部署:${department ?? '不明'}` : `個人`;
+  return `産業ストレスチェックに関する知見。対象=${target}。注目尺度=${focus}。根拠付きで解釈・分析する資料箇所を検索。`;
+}
+
+type RetrievedContext = { text: string; source?: string; score?: number };
+
+async function retrieveContexts(query: string, k = 3): Promise<RetrievedContext[]> {
+  const kbId = process.env.KB_ID!;
+  try {
+    const res = await bedrockAgentClient.send(
+      new RetrieveCommand({
+        knowledgeBaseId: kbId,
+        retrievalQuery: { text: query },
+        retrievalConfiguration: { vectorSearchConfiguration: { numberOfResults: k } },
+      })
+    );
+    const results = (res.retrievalResults ?? []).slice(0, k).map((r: any) => ({
+      text: r.content?.text ?? '',
+      source: r.location?.s3Location?.uri as string | undefined,
+      score: typeof r.score === 'number' ? r.score : undefined,
+    }));
+    return results;
+  } catch (e) {
+    console.log('retrieveContexts error:', (e as any)?.message || e);
+    return [];
+  }
+}
+
+function truncate(s: string, maxLen: number): string {
+  if (s.length <= maxLen) return s;
+  return s.slice(0, maxLen - 1) + '…';
+}
+
  /**
  * AIコメント生成用のプロンプトを作成
  */
@@ -162,11 +237,15 @@ function generatePrompt(
   subscaleScores: Record<string, { raw: number; eval: number; label: string; reverse?: boolean }>,
   userName?: string,
   department?: string,
+  yearsOfService?: number,
   age?: number,
-  gender?: 'male' | 'female'
+  gender?: 'male' | 'female',
+  isCluster?: boolean
 ): string {
+  // 評価点 (1-5) を日本語ラベルに変換（小数は四捨五入）
   const levelText = (v: number) => {
-    switch (v) {
+    const rounded = Math.max(1, Math.min(5, Math.round(v)));
+    switch (rounded) {
       case 1:
         return '低い';
       case 2:
@@ -196,12 +275,38 @@ function generatePrompt(
 
   const genderText = gender === 'male' ? '男性' : gender === 'female' ? '女性' : '不明';
 
-  return `あなたは経験豊富な産業医・メンタルヘルス専門家です。以下の情報を参考に、重要な尺度に焦点を当てて 400 文字以内で具体的かつ前向きなアドバイスを作成してください。
+  const clusterMode = isCluster || (userName ?? '').includes('クラスタ');
 
-【対象者情報】
-- 性別: ${genderText}
-- 年齢: ${age ?? '不明'}歳
-- 部署: ${department ?? '不明'}
+  const header = clusterMode
+    ? `あなたは経験豊富な組織改善人事コンサルタントです。以下の内容に従い、対象グループのストレス状況とその要因に関するレポートを800文字以内で作成してください。具体的な提案は不要なので、いまどういう状態にあり、それが何によって生じているのかを深く、多角的に分析してください。`
+    : `あなたは経験豊富な産業医・メンタルヘルス専門家です。以下の情報を参考に、重要な尺度に焦点を当てて 400 文字以内で具体的かつ前向きなアドバイスを作成してください。`;
+
+  const infoSectionTitle = clusterMode ? '対象グループ情報' : '対象者情報';
+
+  const infoLines = clusterMode
+    ? `- 部署: ${department ?? '不明'}`
+    : `- 性別: ${genderText}\n- 年齢: ${age ?? '不明'}歳\n- 勤続年数: ${yearsOfService ?? '不明'}年\n- 部署: ${department ?? '不明'}`;
+
+  if (clusterMode) {
+    return `${header}
+
+【${infoSectionTitle}】
+${infoLines}
+
+【注目すべき尺度（5段階評価）】
+${focusLines}
+
+【依頼事項】
+1. 注目すべき尺度をもとに、人事の専門家として適切な組織改善提案を提示
+2. 尺度の結果を総合し、問題の根本を捉え、それを言語化する
+
+アドバイス:`;
+  }
+
+  return `${header}
+
+【${infoSectionTitle}】
+${infoLines}
 
 【高ストレス者判定】${scores.highStress ? 'はい（要注意）' : 'いいえ'}
 

@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "gen-scores": "tsx scripts/generateScores.ts",
+    "gen-dummy": "tsx scripts/generateDummyData.ts",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -16,6 +18,7 @@
     "autoprefixer": "^10.4.16",
     "aws-amplify": "^6.15.4",
     "chart.js": "^4.4.0",
+    "mathjs": "^11.12.0",
     "next": "^14.2.31",
     "postcss": "^8.4.32",
     "react": "18.2.0",
@@ -35,6 +38,7 @@
     "aws-cdk-lib": "^2.208.0",
     "constructs": "^10.4.2",
     "esbuild": "^0.25.8",
+    "ts-node": "^10.9.2",
     "tsx": "^4.20.3",
     "typescript": "^5.9.2"
   }

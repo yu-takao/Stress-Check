@@ -43,11 +43,13 @@ interface Props {
   userName?: string;
   department?: string;
   age?: number;
+  yearsOfService?: number;
   gender?: 'male' | 'female';
+  isCluster?: boolean;
 }
 
 
-export default function AICommentGenerator({ scores, subscaleScores, userName, department, age, gender }: Props) {
+export default function AICommentGenerator({ scores, subscaleScores, userName, department, age, yearsOfService, gender, isCluster }: Props) {
   const [aiComment, setAiComment] = useState<string>('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>('');
@@ -69,7 +71,9 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
         userName,
         department,
         age,
+        yearsOfService,
         gender,
+        isCluster,
       });
 
       const result = await client.queries.generateAiComment({
@@ -81,9 +85,11 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
         userName,
         department,
         age,
+        yearsOfService,
         gender,
+        isCluster,
         subscaleScores: JSON.stringify(subscaleScores),
-        } as any);
+            } as any);
 
       console.log('GraphQL query result:', result);
 
@@ -124,21 +130,9 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
 
   return (
     <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200">
-      <div className="flex items-center gap-2 mb-4">
-        <span className="text-2xl">🤖</span>
-        <h3 className="text-lg font-semibold text-purple-800">
-          AI ストレス分析・アドバイス
-        </h3>
-      </div>
+
       
-      <p className="text-sm text-purple-700 mb-4">
-        ストレス専門医のロジックに基づいて、あなたのストレス状況を分析し、
-        個別のアドバイスを生成します。
-        <br />
-        <span className="text-xs text-purple-600">
-          ※ 開発版：実際のAI（Claude 3.5 Sonnet）統合は設定完了後に有効化されます
-        </span>
-      </p>
+
 
       {/* 生成ボタン */}
       {!aiComment && (

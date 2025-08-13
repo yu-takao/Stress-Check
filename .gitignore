@@ -1,22 +1,12 @@
-# Node / Next.js build outputs
+# Added by automation
 node_modules/
 .next/
-out/
-
-# Amplify Gen2 temporary & outputs
-amplify/outputs.json
-amplify/.temp/
-
-# Env / secrets
-.env*
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Logs
+dist/
+*.tsbuildinfo
 *.log
-
-# IDE
-.vscode/
-.idea/
+.DS_Store
+.amplify/artifacts/
+.amplify/tsconfig.tsbuildinfo
+.amplify/artifacts/cdk.out/
+.amplify/artifacts/cdk.out/.cache/
+*.zip

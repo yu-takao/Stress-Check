@@ -82,6 +82,6 @@ type LambdaProvidedEnvVars = {
 
 /** Amplify backend environment variables available at runtime, this includes environment variables defined in `defineFunction` and by cross resource mechanisms */
 type AmplifyBackendEnvVars = {
-  BEDROCK_REGION: string;
-  KB_ID: string;
+  KB_UPLOAD_REGION: string;
+  KB_S3_BUCKET: string;
 };

@@ -258,6 +258,74 @@
               "isRequired": true
             }
           }
+        },
+        "listKnowledgeDocs": {
+          "name": "listKnowledgeDocs",
+          "isArray": false,
+          "type": "AWSJSON",
+          "isRequired": false,
+          "arguments": {
+            "prefix": {
+              "name": "prefix",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false
+            },
+            "maxKeys": {
+              "name": "maxKeys",
+              "isArray": false,
+              "type": "Int",
+              "isRequired": false
+            }
+          }
+        }
+      },
+      "mutations": {
+        "uploadKnowledge": {
+          "name": "uploadKnowledge",
+          "isArray": false,
+          "type": "AWSJSON",
+          "isRequired": false,
+          "arguments": {
+            "fileName": {
+              "name": "fileName",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            },
+            "contentBase64": {
+              "name": "contentBase64",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            },
+            "bucket": {
+              "name": "bucket",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false
+            },
+            "prefix": {
+              "name": "prefix",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false
+            }
+          }
+        },
+        "deleteKnowledgeDoc": {
+          "name": "deleteKnowledgeDoc",
+          "isArray": false,
+          "type": "AWSJSON",
+          "isRequired": false,
+          "arguments": {
+            "key": {
+              "name": "key",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true
+            }
+          }
         }
       }
     }

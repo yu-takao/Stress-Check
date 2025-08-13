@@ -1,5 +1,6 @@
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
 import { stressAiComment } from '../functions/stress-ai-comment/resource';
+import { kbUpload, kbList, kbDelete } from '../functions/kb-upload/resource';
 
 /*== ストレスチェックアプリのデータモデル =====================================
 職業性ストレス簡易調査票（57項目）の結果を保存するためのスキーマ定義
@@ -42,6 +43,38 @@ const schema = a.schema({
     })
     .returns(a.json())
     .handler(a.handler.function(stressAiComment))
+    .authorization((allow) => allow.publicApiKey()),
+
+  // PDFアップロード用（ベース64送信の簡易API）
+  uploadKnowledge: a
+    .mutation()
+    .arguments({
+      fileName: a.string().required(),
+      contentBase64: a.string().required(),
+      bucket: a.string(), // 省略時は設定画面で指定 or 事前に固定
+      prefix: a.string(), // 省略時 'knowledge/'
+    })
+    .returns(a.json())
+    .handler(a.handler.function(kbUpload))
+    .authorization((allow) => allow.publicApiKey()),
+
+  // KBドキュメント一覧
+  listKnowledgeDocs: a
+    .query()
+    .arguments({
+      prefix: a.string(), // 省略時 'knowledge/'
+      maxKeys: a.integer(),
+    })
+    .returns(a.json())
+    .handler(a.handler.function(kbList))
+    .authorization((allow) => allow.publicApiKey()),
+
+  // KBドキュメント削除
+  deleteKnowledgeDoc: a
+    .mutation()
+    .arguments({ key: a.string().required() })
+    .returns(a.json())
+    .handler(a.handler.function(kbDelete))
     .authorization((allow) => allow.publicApiKey()),
 
 });

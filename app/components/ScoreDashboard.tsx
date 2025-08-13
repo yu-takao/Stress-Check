@@ -10,7 +10,7 @@ import SubscaleRadar from "./SubscaleRadar";
 import DomainSection from "./DomainSection";
 import { calculateSubscaleScores } from "@/lib/utils/calculateSubscaleScores";
 import { SUBSCALES } from "@/lib/utils/subscaleMeta";
-import { UserData } from "../../lib/data/users";
+import { UserData, users as allUsers } from "../../lib/data/users";
 
 interface Props {
   users: UserData[];
@@ -20,10 +20,30 @@ const ScoreDashboard: React.FC<Props> = ({ users }) => {
   const [selectedId, setSelectedId] = useState<string>(users[0]?.id ?? "");
 
   const selectedUser = users.find((u) => u.id === selectedId) ?? users[0];
+  const { yearsOfService } = selectedUser;
 
     const scores = useMemo(() => calculateScore(selectedUser.responses), [selectedUser]);
   const highStress = useMemo(() => isHighStress(scores), [scores]);
   const subscaleScores = useMemo(() => calculateSubscaleScores(selectedUser.responses, selectedUser.gender), [selectedUser]);
+  const baselineSubscaleScores = useMemo(() => {
+    if (!allUsers.length) return {} as Record<string, { raw: number; eval: number }>;
+    const agg: Record<string, { raw: number; eval: number }> = {} as any;
+    SUBSCALES.forEach((s) => {
+      agg[s.id] = { raw: 0, eval: 0 };
+    });
+    allUsers.forEach((u) => {
+      const subs = calculateSubscaleScores(u.responses, u.gender);
+      SUBSCALES.forEach((s) => {
+        agg[s.id].raw += subs[s.id]?.raw ?? 0;
+        agg[s.id].eval += subs[s.id]?.eval ?? 0;
+      });
+    });
+    SUBSCALES.forEach((s) => {
+      agg[s.id].raw = Math.round((agg[s.id].raw / allUsers.length) * 10) / 10;
+      agg[s.id].eval = Math.round((agg[s.id].eval / allUsers.length) * 10) / 10;
+    });
+    return agg;
+  }, []);
   const detailedSubscaleScores = useMemo(() => {
     const details: Record<string, { label: string; reverse: boolean; raw: number; eval: number }> = {};
     SUBSCALES.forEach((s) => {
@@ -70,7 +90,7 @@ const ScoreDashboard: React.FC<Props> = ({ users }) => {
             <ul className="list-disc ml-6 space-y-1 text-sm md:text-base">
               <li>A 領域 (仕事のストレス要因): {scores.A} 点</li>
               <li>B 領域 (心身のストレス反応): {scores.B} 点</li>
-              <li>C 領域 (周囲のサポート): {scores.C} 点</li>
+                        <li>C 領域 (周囲のサポート): {scores.C} 点</li>
             </ul>
 
             {/* 高ストレス判定 */}
@@ -93,6 +113,7 @@ const ScoreDashboard: React.FC<Props> = ({ users }) => {
             userName={selectedUser.name}
             department={selectedUser.department}
             age={selectedUser.age}
+            yearsOfService={selectedUser.yearsOfService}
             gender={selectedUser.gender}
             subscaleScores={detailedSubscaleScores}
           />
@@ -101,9 +122,9 @@ const ScoreDashboard: React.FC<Props> = ({ users }) => {
 
       {/* 領域別 19 尺度表示 */}
       <div className="mt-10 space-y-12">
-        <DomainSection domain="A" scores={subscaleScores} />
-        <DomainSection domain="B" scores={subscaleScores} />
-        <DomainSection domain="C" scores={subscaleScores} />
+        <DomainSection domain="A" scores={subscaleScores} showRaw={false} baselineScores={baselineSubscaleScores} />
+        <DomainSection domain="B" scores={subscaleScores} showRaw={false} baselineScores={baselineSubscaleScores} />
+        <DomainSection domain="C" scores={subscaleScores} showRaw={false} baselineScores={baselineSubscaleScores} />
       </div>
     </div>
   );

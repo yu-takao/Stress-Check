@@ -7,6 +7,8 @@ import React from "react";
 interface Props {
   domain: 'A' | 'B' | 'C';
   scores: Record<string, { raw: number; eval: number }>;
+  showRaw?: boolean;
+  baselineScores?: Record<string, { raw: number; eval: number }>;
 }
 
 const DOMAIN_TITLE: Record<'A' | 'B' | 'C', string> = {
@@ -15,7 +17,7 @@ const DOMAIN_TITLE: Record<'A' | 'B' | 'C', string> = {
   C: 'ストレス反応に影響を与える他の因子',
 };
 
-export default function DomainSection({ domain, scores }: Props) {
+export default function DomainSection({ domain, scores, showRaw = true, baselineScores }: Props) {
   const scales: SubScale[] = SUBSCALES.filter((s) => s.domain === domain);
   return (
     <section className="space-y-4">
@@ -23,12 +25,12 @@ export default function DomainSection({ domain, scores }: Props) {
       <div className="flex flex-col md:flex-row gap-4">
         {/* 表（テーブル） */}
         {/* 表（テーブル） */}
-        <div className="flex-1 md:max-w-md">
-          <SubscaleTable scales={scales} scores={scores} />
+        <div className="w-full md:w-[360px] flex-none">
+          <SubscaleTable scales={scales} scores={scores} showRaw={showRaw} baselineScores={baselineScores} />
         </div>
         {/* レーダーチャート */}
-        <div className="flex-none w-72 h-72 mx-auto md:mx-0">
-          <SubscaleRadar scales={scales} scores={scores} />
+        <div className="flex-none w-72 h-72 mx-auto md:mx-0 md:ml-6">
+          <SubscaleRadar scales={scales} scores={scores} baselineScores={baselineScores} />
         </div>
       </div>
     </section>

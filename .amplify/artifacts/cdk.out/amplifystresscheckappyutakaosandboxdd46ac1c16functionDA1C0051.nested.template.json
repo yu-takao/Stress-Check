@@ -59,7 +59,8 @@
       {
        "Action": [
         "bedrock:InvokeModel",
-        "bedrock:InvokeModelWithResponseStream"
+        "bedrock:InvokeModelWithResponseStream",
+        "bedrock:Retrieve"
        ],
        "Effect": "Allow",
        "Resource": [
@@ -70,7 +71,8 @@
         "arn:aws:bedrock:us-east-1::foundation-model/*",
         "arn:aws:bedrock:us-east-2::foundation-model/*",
         "arn:aws:bedrock:us-west-1::foundation-model/*",
-        "arn:aws:bedrock:us-west-2::foundation-model/*"
+        "arn:aws:bedrock:us-west-2::foundation-model/*",
+        "*"
        ]
       }
      ],
@@ -99,11 +101,12 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "0740d3525ae788469df46ecd0ec56b7f8b37e6213bed8ef6a479f841dcdf5d88.zip"
+     "S3Key": "e4775f7ead095e77343d08204600565b903d1592287a636bbd10cb8749e15abf.zip"
     },
     "Environment": {
      "Variables": {
       "BEDROCK_REGION": "us-east-1",
+      "KB_ID": "ULSAODWWKY",
       "AMPLIFY_SSM_ENV_CONFIG": "{}"
      }
     },
@@ -143,7 +146,423 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/handler-lambda/Resource",
-    "aws:asset:path": "asset.0740d3525ae788469df46ecd0ec56b7f8b37e6213bed8ef6a479f841dcdf5d88",
+    "aws:asset:path": "asset.e4775f7ead095e77343d08204600565b903d1592287a636bbd10cb8749e15abf",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "uploaderlambdaServiceRole900B18A6": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "uploader"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/uploader-lambda/ServiceRole/Resource"
+   }
+  },
+  "uploaderlambdaServiceRoleDefaultPolicy26F81FB1": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:PutObject",
+        "s3:ListBucket",
+        "s3:PutObjectAcl",
+        "s3:GetBucketLocation"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "uploaderlambdaServiceRoleDefaultPolicy26F81FB1",
+    "Roles": [
+     {
+      "Ref": "uploaderlambdaServiceRole900B18A6"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/uploader-lambda/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "uploaderlambda12062730": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "x86_64"
+    ],
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "08d04860d9537469dfc83cfc2fc4637ff8070d46f275c4d2f7a27a7a211ad62d.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "KB_UPLOAD_REGION": "us-east-1",
+      "KB_S3_BUCKET": "kb-stress-check",
+      "AMPLIFY_SSM_ENV_CONFIG": "{}"
+     }
+    },
+    "EphemeralStorage": {
+     "Size": 512
+    },
+    "Handler": "index.handler",
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "uploaderlambdaServiceRole900B18A6",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "uploader"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "uploaderlambdaServiceRoleDefaultPolicy26F81FB1",
+    "uploaderlambdaServiceRole900B18A6"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/uploader-lambda/Resource",
+    "aws:asset:path": "asset.08d04860d9537469dfc83cfc2fc4637ff8070d46f275c4d2f7a27a7a211ad62d",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "listlambdaServiceRoleB665635C": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "list"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/list-lambda/ServiceRole/Resource"
+   }
+  },
+  "listlambdaServiceRoleDefaultPolicyA6B8F505": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": [
+        "s3:ListBucket",
+        "s3:GetObject"
+       ],
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "listlambdaServiceRoleDefaultPolicyA6B8F505",
+    "Roles": [
+     {
+      "Ref": "listlambdaServiceRoleB665635C"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/list-lambda/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "listlambdaDA7F6358": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "x86_64"
+    ],
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "a4278cc26f4919ee4706c2c99a7cfb3b89eaa98101a47f53ac5dd0f41445a7e4.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "KB_UPLOAD_REGION": "us-east-1",
+      "KB_S3_BUCKET": "kb-stress-check",
+      "AMPLIFY_SSM_ENV_CONFIG": "{}"
+     }
+    },
+    "EphemeralStorage": {
+     "Size": 512
+    },
+    "Handler": "index.handler",
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "listlambdaServiceRoleB665635C",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "list"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "listlambdaServiceRoleDefaultPolicyA6B8F505",
+    "listlambdaServiceRoleB665635C"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/list-lambda/Resource",
+    "aws:asset:path": "asset.a4278cc26f4919ee4706c2c99a7cfb3b89eaa98101a47f53ac5dd0f41445a7e4",
+    "aws:asset:is-bundled": true,
+    "aws:asset:property": "Code"
+   }
+  },
+  "deletelambdaServiceRoleBD29FCDB": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "lambda.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "ManagedPolicyArns": [
+     {
+      "Fn::Join": [
+       "",
+       [
+        "arn:",
+        {
+         "Ref": "AWS::Partition"
+        },
+        ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+       ]
+      ]
+     }
+    ],
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "delete"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/delete-lambda/ServiceRole/Resource"
+   }
+  },
+  "deletelambdaServiceRoleDefaultPolicy4CE87048": {
+   "Type": "AWS::IAM::Policy",
+   "Properties": {
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "s3:DeleteObject",
+       "Effect": "Allow",
+       "Resource": "*"
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "PolicyName": "deletelambdaServiceRoleDefaultPolicy4CE87048",
+    "Roles": [
+     {
+      "Ref": "deletelambdaServiceRoleBD29FCDB"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/delete-lambda/ServiceRole/DefaultPolicy/Resource"
+   }
+  },
+  "deletelambda9BBFD33D": {
+   "Type": "AWS::Lambda::Function",
+   "Properties": {
+    "Architectures": [
+     "x86_64"
+    ],
+    "Code": {
+     "S3Bucket": {
+      "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+     },
+     "S3Key": "b8d0a25d02cb759e934b4154eed7e76d47f209306b02595fabfed5039f51389d.zip"
+    },
+    "Environment": {
+     "Variables": {
+      "KB_UPLOAD_REGION": "us-east-1",
+      "KB_S3_BUCKET": "kb-stress-check",
+      "AMPLIFY_SSM_ENV_CONFIG": "{}"
+     }
+    },
+    "EphemeralStorage": {
+     "Size": 512
+    },
+    "Handler": "index.handler",
+    "MemorySize": 512,
+    "Role": {
+     "Fn::GetAtt": [
+      "deletelambdaServiceRoleBD29FCDB",
+      "Arn"
+     ]
+    },
+    "Runtime": "nodejs20.x",
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "delete"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "Timeout": 30
+   },
+   "DependsOn": [
+    "deletelambdaServiceRoleDefaultPolicy4CE87048",
+    "deletelambdaServiceRoleBD29FCDB"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/delete-lambda/Resource",
+    "aws:asset:path": "asset.b8d0a25d02cb759e934b4154eed7e76d47f209306b02595fabfed5039f51389d",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -426,6 +845,22 @@
   }
  },
  "Outputs": {
+  "amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "uploaderlambda12062730",
+     "Arn"
+    ]
+   }
+  },
+  "amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "deletelambda9BBFD33D",
+     "Arn"
+    ]
+   }
+  },
   "amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": {
    "Value": {
     "Fn::GetAtt": [
@@ -434,9 +869,32 @@
     ]
    }
   },
+  "amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn": {
+   "Value": {
+    "Fn::GetAtt": [
+     "listlambdaDA7F6358",
+     "Arn"
+    ]
+   }
+  },
   "amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DRef": {
    "Value": {
     "Ref": "handlerlambdaE29D1580"
+   }
+  },
+  "amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Ref": {
+   "Value": {
+    "Ref": "uploaderlambda12062730"
+   }
+  },
+  "amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Ref": {
+   "Value": {
+    "Ref": "listlambdaDA7F6358"
+   }
+  },
+  "amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Ref": {
+   "Value": {
+    "Ref": "deletelambda9BBFD33D"
    }
   }
  }

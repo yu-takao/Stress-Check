@@ -9,11 +9,37 @@ ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, 
 interface Props {
   scales: SubScale[];
   scores: Record<string, { raw: number; eval: number }>;
+  baselineScores?: Record<string, { raw: number; eval: number }>;
 }
 
-export default function SubscaleRadar({ scales, scores }: Props) {
-  const labels = scales.map((s) => s.label.replace(/★$/, "*"));
+function wrapJapaneseLabel(label: string, maxPerLine = 7): string | string[] {
+  const clean = label.replace(/★$/, "*");
+  // 句読点や中点で優先的に分割
+  const separators = ["・", "／", "/", "(", "（", " ）", ")"];
+  for (const sep of separators) {
+    if (clean.includes(sep)) {
+      const parts = clean.split(sep).filter(Boolean);
+      const lines: string[] = [];
+      for (const p of parts) {
+        for (let i = 0; i < p.length; i += maxPerLine) {
+          lines.push(p.slice(i, i + maxPerLine));
+        }
+      }
+      return lines;
+    }
+  }
+  if (clean.length <= maxPerLine) return clean;
+  const chunks: string[] = [];
+  for (let i = 0; i < clean.length; i += maxPerLine) {
+    chunks.push(clean.slice(i, i + maxPerLine));
+  }
+  return chunks;
+}
+
+export default function SubscaleRadar({ scales, scores, baselineScores }: Props) {
+  const labels = scales.map((s) => wrapJapaneseLabel(s.label, 7));
   const dataVals = scales.map((s) => scores[s.id]?.eval ?? 3);
+  const baseVals = baselineScores ? scales.map((s) => baselineScores[s.id]?.eval ?? 3) : undefined;
 
   const data = {
     labels,
@@ -26,6 +52,16 @@ export default function SubscaleRadar({ scales, scores }: Props) {
         borderWidth: 2,
         pointRadius: 2,
       },
+      ...(baseVals
+        ? [{
+            label: "全体平均",
+            data: baseVals,
+            backgroundColor: "rgba(107,114,128,0.15)",
+            borderColor: "rgba(107,114,128,0.9)",
+            borderWidth: 1.5,
+            pointRadius: 1.5,
+          }] as const
+        : []),
     ],
   } as const;
 
@@ -35,9 +71,13 @@ export default function SubscaleRadar({ scales, scores }: Props) {
         min: 0,
         max: 5,
         ticks: { stepSize: 1 },
+        pointLabels: {
+          font: { size: 10 },
+        },
       },
     },
-    plugins: { legend: { display: false } },
+    plugins: { legend: { display: true, position: "bottom" } },
+    layout: { padding: 12 },
   } as const;
 
   return (
