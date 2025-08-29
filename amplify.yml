@@ -1,0 +1,7 @@
+version: 1
+frontend:
+  phases:
+    install:
+      runtime-versions:
+        nodejs: 20
+
