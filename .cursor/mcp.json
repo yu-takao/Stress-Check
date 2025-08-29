@@ -1,0 +1,14 @@
+{
+  "servers": {
+    "aws": {
+      "command": "aws-api-mcp",
+      "env": {
+        "AWS_PROFILE": "new-env",
+        "AWS_REGION": "ap-northeast-1",
+        "AWS_DEFAULT_REGION": "ap-northeast-1",
+        "AWS_SDK_LOAD_CONFIG": "1"
+      }
+    }
+  }
+}
+
