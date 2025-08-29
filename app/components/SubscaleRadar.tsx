@@ -41,7 +41,7 @@ export default function SubscaleRadar({ scales, scores, baselineScores }: Props)
   const dataVals = scales.map((s) => scores[s.id]?.eval ?? 3);
   const baseVals = baselineScores ? scales.map((s) => baselineScores[s.id]?.eval ?? 3) : undefined;
 
-  const data = {
+  const data: import('chart.js').ChartData<'radar', number[], string | string[]> = {
     labels,
     datasets: [
       {
@@ -60,12 +60,12 @@ export default function SubscaleRadar({ scales, scores, baselineScores }: Props)
             borderColor: "rgba(107,114,128,0.9)",
             borderWidth: 1.5,
             pointRadius: 1.5,
-          }] as const
+          }] as Array<import('chart.js').ChartDataset<'radar', number[]>>
         : []),
     ],
-  } as const;
+  };
 
-  const options = {
+  const options: import('chart.js').ChartOptions<'radar'> = {
     scales: {
       r: {
         min: 0,
@@ -78,7 +78,7 @@ export default function SubscaleRadar({ scales, scores, baselineScores }: Props)
     },
     plugins: { legend: { display: true, position: "bottom" } },
     layout: { padding: 12 },
-  } as const;
+  };
 
   return (
     <div className="w-full h-72">
