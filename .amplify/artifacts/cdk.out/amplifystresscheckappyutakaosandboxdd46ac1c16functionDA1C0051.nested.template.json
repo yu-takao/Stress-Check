@@ -101,7 +101,7 @@
      "S3Bucket": {
       "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
      },
-     "S3Key": "e4775f7ead095e77343d08204600565b903d1592287a636bbd10cb8749e15abf.zip"
+     "S3Key": "2e07c89619a1a1d60be54bda80e000d95d56037c69026a022757731810904678.zip"
     },
     "Environment": {
      "Variables": {
@@ -146,7 +146,7 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/handler-lambda/Resource",
-    "aws:asset:path": "asset.e4775f7ead095e77343d08204600565b903d1592287a636bbd10cb8749e15abf",
+    "aws:asset:path": "asset.2e07c89619a1a1d60be54bda80e000d95d56037c69026a022757731810904678",
     "aws:asset:is-bundled": true,
     "aws:asset:property": "Code"
    }
@@ -845,34 +845,10 @@
   }
  },
  "Outputs": {
-  "amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn": {
-   "Value": {
-    "Fn::GetAtt": [
-     "uploaderlambda12062730",
-     "Arn"
-    ]
-   }
-  },
-  "amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn": {
-   "Value": {
-    "Fn::GetAtt": [
-     "deletelambda9BBFD33D",
-     "Arn"
-    ]
-   }
-  },
   "amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": {
    "Value": {
     "Fn::GetAtt": [
      "handlerlambdaE29D1580",
-     "Arn"
-    ]
-   }
-  },
-  "amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn": {
-   "Value": {
-    "Fn::GetAtt": [
-     "listlambdaDA7F6358",
      "Arn"
     ]
    }

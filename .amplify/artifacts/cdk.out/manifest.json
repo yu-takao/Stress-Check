@@ -22,7 +22,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/63cb9b8bbed4defc906cb3e794aa854b05176fd6a9b3dc93f3eb3e14a25a62c2.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/62666b271a71d73e505496795b8055dbb5529120c3b24ec4abf6ad00061f9d5e.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -915,102 +915,6 @@
             "data": "HasEnvironmentParameter"
           }
         ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnUploadKnowledgeLambdaDataSource": [
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "FnUploadKnowledgeLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnUploadKnowledgeLambdaDataSource/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnUploadKnowledgeLambdaDataSourceServiceRole5DDE51DB"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnUploadKnowledgeLambdaDataSource/ServiceRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnUploadKnowledgeLambdaDataSourceServiceRoleDefaultPolicyECDCF6EB"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnUploadKnowledgeLambdaDataSource/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnUploadKnowledgeLambdaDataSource"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "FnUploadKnowledgeLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/InvokeFnUploadKnowledgeLambdaDataSource/InvokeFnUploadKnowledgeLambdaDataSource.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "InvokeFnUploadKnowledgeLambdaDataSourceInvokeFnUploadKnowledgeLambdaDataSourceAppSyncFunction221DC6B0"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "InvokeFnUploadKnowledgeLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/mutationUploadKnowledgeResolver": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "MutationuploadKnowledgeResolver"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "Mutation.uploadKnowledge"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnDeleteKnowledgeDocLambdaDataSource": [
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "FnDeleteKnowledgeDocLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnDeleteKnowledgeDocLambdaDataSource/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnDeleteKnowledgeDocLambdaDataSourceServiceRole3BF18F13"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnDeleteKnowledgeDocLambdaDataSource/ServiceRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnDeleteKnowledgeDocLambdaDataSourceServiceRoleDefaultPolicyD2CE4F8B"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnDeleteKnowledgeDocLambdaDataSource/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnDeleteKnowledgeDocLambdaDataSource"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "FnDeleteKnowledgeDocLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/InvokeFnDeleteKnowledgeDocLambdaDataSource/InvokeFnDeleteKnowledgeDocLambdaDataSource.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "InvokeFnDeleteKnowledgeDocLambdaDataSourceInvokeFnDeleteKnowledgeDocLambdaDataSourceAppSyncFunctionAB1ECBCC"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "InvokeFnDeleteKnowledgeDocLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/mutationDeleteKnowledgeDocResolver": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "MutationdeleteKnowledgeDocResolver"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "Mutation.deleteKnowledgeDoc"
-          }
-        ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnGenerateAiCommentLambdaDataSource": [
           {
             "type": "graphqltransformer:resourceName",
@@ -1059,74 +963,6 @@
             "data": "Query.generateAiComment"
           }
         ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnListKnowledgeDocsLambdaDataSource": [
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "FnListKnowledgeDocsLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnListKnowledgeDocsLambdaDataSource/ServiceRole/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnListKnowledgeDocsLambdaDataSourceServiceRole8EA40F8E"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnListKnowledgeDocsLambdaDataSource/ServiceRole/DefaultPolicy/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnListKnowledgeDocsLambdaDataSourceServiceRoleDefaultPolicyC023212D"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/FnListKnowledgeDocsLambdaDataSource/Resource": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "FnListKnowledgeDocsLambdaDataSource"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "FnListKnowledgeDocsLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/InvokeFnListKnowledgeDocsLambdaDataSource/InvokeFnListKnowledgeDocsLambdaDataSource.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "InvokeFnListKnowledgeDocsLambdaDataSourceInvokeFnListKnowledgeDocsLambdaDataSourceAppSyncFunction7EA88F79"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "InvokeFnListKnowledgeDocsLambdaDataSource"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/queryListKnowledgeDocsResolver": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "QuerylistKnowledgeDocsResolver"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "Query.listKnowledgeDocs"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/MutationUploadKnowledgeAuthFN/MutationUploadKnowledgeAuthFN.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "MutationUploadKnowledgeAuthFNMutationUploadKnowledgeAuthFNAppSyncFunction1D547CC6"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "MutationUploadKnowledgeAuthFN"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/MutationDeleteKnowledgeDocAuthFN/MutationDeleteKnowledgeDocAuthFN.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "MutationDeleteKnowledgeDocAuthFNMutationDeleteKnowledgeDocAuthFNAppSyncFunction9420260E"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "MutationDeleteKnowledgeDocAuthFN"
-          }
-        ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/QueryGenerateAiCommentAuthFN/QueryGenerateAiCommentAuthFN.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
@@ -1135,16 +971,6 @@
           {
             "type": "graphqltransformer:resourceName",
             "data": "QueryGenerateAiCommentAuthFN"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/QueryListKnowledgeDocsAuthFN/QueryListKnowledgeDocsAuthFN.AppSyncFunction": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "QueryListKnowledgeDocsAuthFNQueryListKnowledgeDocsAuthFNAppSyncFunction9D78F7A1"
-          },
-          {
-            "type": "graphqltransformer:resourceName",
-            "data": "QueryListKnowledgeDocsAuthFN"
           }
         ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/CDKMetadata/Default": [
@@ -1159,10 +985,10 @@
             "data": "CDKMetadataAvailable"
           }
         ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn": [
+        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn"
+            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
           }
         ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId": [
@@ -1187,24 +1013,6 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn"
           }
         ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifyData/FunctionDirectiveStack/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPINONEDS6B234FA4Name": [
@@ -1429,28 +1237,10 @@
             "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16authNestedStackauthNestedStackResourceA224A6EFOutputsamplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
           }
         ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn"
-          }
-        ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": [
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/reference-to-amplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn"
           }
         ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/data/amplifystresscheckappyutakaosandboxdd46ac1c16dataamplifyDataGraphQLAPI6D1711C5ApiId": [
@@ -1567,28 +1357,10 @@
             "data": "CDKMetadataAvailable"
           }
         ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn"
-          }
-        ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": [
           {
             "type": "aws:cdk:logicalId",
             "data": "amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
-          }
-        ],
-        "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn": [
-          {
-            "type": "aws:cdk:logicalId",
-            "data": "amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn"
           }
         ],
         "/amplify-stresscheckapp-yutakao-sandbox-dd46ac1c16/function/amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DRef": [

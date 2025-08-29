@@ -325,28 +325,10 @@
        "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16authamplifyAuthIdentityPool7245CF54Ref"
       ]
      },
-     "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn": {
-      "Fn::GetAtt": [
-       "function1351588B",
-       "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionuploaderlambda02FFF9A7Arn"
-      ]
-     },
-     "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn": {
-      "Fn::GetAtt": [
-       "function1351588B",
-       "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functiondeletelambda22799F67Arn"
-      ]
-     },
      "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn": {
       "Fn::GetAtt": [
        "function1351588B",
        "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionhandlerlambdaF0D1488DArn"
-      ]
-     },
-     "referencetoamplifystresscheckappyutakaosandboxdd46ac1c16functionNestedStackfunctionNestedStackResource78162BB9Outputsamplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn": {
-      "Fn::GetAtt": [
-       "function1351588B",
-       "Outputs.amplifystresscheckappyutakaosandboxdd46ac1c16functionlistlambdaDABF65F2Arn"
       ]
      }
     },
@@ -376,7 +358,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/4be4ea83d41807886b1a661938ad6ed5379d0c1d0550590b087071e69b965b83.json"
+       "/64e94fe973c6d4b2604d2d15b05e63b0047fc4b50010c3eada7298dafa671c7e.json"
       ]
      ]
     }
@@ -418,7 +400,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/c778831abeea85e51c09f5311536b4c7a6adb518a230b4c07ca5ec5daca67113.json"
+       "/508ac49f380e47304aa7474ddf65adc76f9d03cef21b682ab42a3a9fd3707b65.json"
       ]
      ]
     }

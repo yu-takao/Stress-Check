@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { generateClient } from 'aws-amplify/data';
 import type { Schema } from '@/amplify/data/resource';
 import { Amplify } from 'aws-amplify';
@@ -46,19 +46,65 @@ interface Props {
   yearsOfService?: number;
   gender?: 'male' | 'female';
   isCluster?: boolean;
+  extraPromptOverride?: string;
 }
 
 
-export default function AICommentGenerator({ scores, subscaleScores, userName, department, age, yearsOfService, gender, isCluster }: Props) {
-  const [aiComment, setAiComment] = useState<string>('');
+export default function AICommentGenerator({ scores, subscaleScores, userName, department, age, yearsOfService, gender, isCluster, extraPromptOverride }: Props) {
+  const [aiComment, setAiComment] = useState<string>(''); // full text
+  const [streamed, setStreamed] = useState<string>('');   // progressively shown text
+  const streamTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string>('');
   const [analysisDetails, setAnalysisDetails] = useState<any>(null);
   const [promptText, setPromptText] = useState<string>('');
+  const [language, setLanguage] = useState<string>(() => {
+    if (typeof window === 'undefined') return 'ja';
+    return localStorage.getItem('ai_output_language') || 'ja';
+  });
+  const [extraPrompt, setExtraPrompt] = useState<string>('');
+
+  // 初期の追加プロンプトを読み込み（個人/集団でキーを切替、overrideがあれば優先）
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (typeof extraPromptOverride === 'string') {
+      setExtraPrompt(extraPromptOverride);
+      return;
+    }
+    const key = isCluster ? 'ai_extra_prompt_cluster' : 'ai_extra_prompt_individual';
+    setExtraPrompt(localStorage.getItem(key) || '');
+  }, [isCluster, extraPromptOverride]);
+
+  // 設定タブからの変更を反映（言語・追記プロンプト）
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const onLang = (e: any) => {
+      const v = e?.detail || localStorage.getItem('ai_output_language') || 'ja';
+      setLanguage(v);
+    };
+    const onExtra = (e: any) => {
+      const scope = e?.detail?.scope as 'individual' | 'cluster' | undefined;
+      if ((isCluster && scope === 'cluster') || (!isCluster && scope === 'individual')) {
+        setExtraPrompt(e?.detail?.text || '');
+      }
+    };
+    window.addEventListener('ai-language-changed', onLang);
+    window.addEventListener('ai-extra-prompt-changed', onExtra);
+    return () => {
+      window.removeEventListener('ai-language-changed', onLang);
+      window.removeEventListener('ai-extra-prompt-changed', onExtra);
+    };
+  }, [isCluster]);
 
   const generateComment = async () => {
     setIsLoading(true);
     setError('');
+    // reset streaming state
+    if (streamTimerRef.current) {
+      clearInterval(streamTimerRef.current);
+      streamTimerRef.current = null;
+    }
+    setStreamed('');
 
     try {
       console.log('Starting AI comment generation with params:', {
@@ -88,6 +134,8 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
         yearsOfService,
         gender,
         isCluster,
+        language,
+        extraPrompt,
         subscaleScores: JSON.stringify(subscaleScores),
             } as any);
 
@@ -103,7 +151,25 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
         console.log('Parsed response data:', data);
         
         if (data.success && data.aiComment) {
-          setAiComment(data.aiComment);
+          // start streaming display
+          const full = data.aiComment;
+          setAiComment(full);
+          setStreamed('');
+          if (streamTimerRef.current) {
+            clearInterval(streamTimerRef.current);
+            streamTimerRef.current = null;
+          }
+          // reveal by chunks (word-based) to feel like streaming
+          const tokens = full.split(/(\s+)/); // keep spaces
+          let idx = 0;
+          streamTimerRef.current = setInterval(() => {
+            idx += 1;
+            setStreamed(tokens.slice(0, idx).join(''));
+            if (idx >= tokens.length && streamTimerRef.current) {
+              clearInterval(streamTimerRef.current);
+              streamTimerRef.current = null;
+            }
+          }, 30); // ~30ms per token
           setPromptText(data.prompt || '');
           setAnalysisDetails(data.analysisDetails);
         } else {
@@ -128,8 +194,18 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
     }
   };
 
+  // cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (streamTimerRef.current) {
+        clearInterval(streamTimerRef.current);
+        streamTimerRef.current = null;
+      }
+    };
+  }, []);
+
   return (
-    <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200">
+    <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-lg border border-purple-200 w-full max-w-full overflow-x-hidden">
 
       
 
@@ -177,10 +253,10 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
 
       {/* プロンプト表示（開発用） */}
       {promptText && (
-        <div className="mb-4 bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs whitespace-pre-wrap break-words">
+        <div className="mb-4 bg-gray-50 border border-gray-200 rounded-lg p-3 text-xs whitespace-pre-wrap break-words max-w-full overflow-x-auto">
           <details>
             <summary className="cursor-pointer font-semibold text-gray-700">📝 送信プロンプト (クリックで表示)</summary>
-            <pre className="mt-2 text-[10px] leading-snug">{promptText}</pre>
+            <pre className="mt-2 text-[10px] leading-snug whitespace-pre-wrap break-words max-w-full overflow-x-auto">{promptText}</pre>
           </details>
         </div>
       )}
@@ -193,9 +269,23 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
               <span className="text-lg">💬</span>
               <h4 className="font-medium text-purple-800">AI からのアドバイス</h4>
             </div>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">
-              {aiComment}
-            </p>
+            <p className="text-gray-700 leading-relaxed whitespace-pre-wrap break-words">{streamed || aiComment}</p>
+            {aiComment && streamed !== aiComment && (
+              <div className="mt-2">
+                <button
+                  className="text-xs text-purple-600 hover:text-purple-800 underline"
+                  onClick={() => {
+                    if (streamTimerRef.current) {
+                      clearInterval(streamTimerRef.current);
+                      streamTimerRef.current = null;
+                    }
+                    setStreamed(aiComment);
+                  }}
+                >
+                  すぐに全文を表示
+                </button>
+              </div>
+            )}
           </div>
 
           {/* 分析詳細 */}
@@ -270,6 +360,11 @@ export default function AICommentGenerator({ scores, subscaleScores, userName, d
             onClick={() => {
               setAiComment('');
               setAnalysisDetails(null);
+              if (streamTimerRef.current) {
+                clearInterval(streamTimerRef.current);
+                streamTimerRef.current = null;
+              }
+              setStreamed('');
             }}
             className="text-purple-600 hover:text-purple-800 text-sm underline"
           >

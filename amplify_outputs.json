@@ -251,6 +251,18 @@
               "type": "String",
               "isRequired": false
             },
+            "language": {
+              "name": "language",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false
+            },
+            "extraPrompt": {
+              "name": "extraPrompt",
+              "isArray": false,
+              "type": "String",
+              "isRequired": false
+            },
             "subscaleScores": {
               "name": "subscaleScores",
               "isArray": false,

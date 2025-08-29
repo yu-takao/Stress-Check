@@ -4,17 +4,18 @@ import { useState } from "react";
 import ScoreDashboard from "./ScoreDashboard";
 import GroupAnalysis from "./GroupAnalysis";
 import RAGSettings from "./RAGSettings";
+import UsageHelp from "./UsageHelp";
 import { users } from "../../lib/data/users";
 
 export default function AnalysisTabs() {
-  const [tab, setTab] = useState<'individual' | 'group' | 'settings'>('individual');
+  const [tab, setTab] = useState<'individual' | 'group' | 'settings' | 'usage'>('individual');
 
   return (
     <div className="flex min-h-screen">
       {/* サイドメニュー */}
-      <aside className="w-48 bg-gray-100 border-r px-4 py-6 space-y-2">
+      <aside className="w-36 bg-gray-100 border-r px-3 py-6 space-y-2">
         <button
-          className={`block w-full text-left px-3 py-2 rounded-lg font-medium transition-colors ${
+          className={`block w-full text-left px-2 py-2 rounded-lg font-medium transition-colors ${
             tab === 'individual' ? 'bg-purple-600 text-white' : 'hover:bg-purple-50'
           }`}
           onClick={() => setTab('individual')}
@@ -22,7 +23,7 @@ export default function AnalysisTabs() {
           個人分析
         </button>
         <button
-          className={`block w-full text-left px-3 py-2 rounded-lg font-medium transition-colors ${
+          className={`block w-full text-left px-2 py-2 rounded-lg font-medium transition-colors ${
             tab === 'group' ? 'bg-purple-600 text-white' : 'hover:bg-purple-50'
           }`}
           onClick={() => setTab('group')}
@@ -30,12 +31,20 @@ export default function AnalysisTabs() {
           集団分析
         </button>
         <button
-          className={`block w-full text-left px-3 py-2 rounded-lg font-medium transition-colors ${
+          className={`block w-full text-left px-2 py-2 rounded-lg font-medium transition-colors ${
             tab === 'settings' ? 'bg-purple-600 text-white' : 'hover:bg-purple-50'
           }`}
           onClick={() => setTab('settings')}
         >
           設定
+        </button>
+        <button
+          className={`block w-full text-left px-2 py-2 rounded-lg font-medium transition-colors ${
+            tab === 'usage' ? 'bg-purple-600 text-white' : 'hover:bg-purple-50'
+          }`}
+          onClick={() => setTab('usage')}
+        >
+          使い方
         </button>
       </aside>
 
@@ -44,6 +53,7 @@ export default function AnalysisTabs() {
         {tab === 'individual' && <ScoreDashboard users={users} />}
         {tab === 'group' && <GroupAnalysis />}
         {tab === 'settings' && <RAGSettings />}
+        {tab === 'usage' && <UsageHelp />}
       </main>
     </div>
   );

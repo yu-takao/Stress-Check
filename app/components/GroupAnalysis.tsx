@@ -27,7 +27,7 @@ export default function GroupAnalysis() {
   }
 
   return (
-    <div className="p-6 text-gray-700 space-y-6">
+    <div className="p-6 text-gray-700 space-y-6 max-w-full overflow-x-hidden">
       <h2 className="text-2xl font-semibold mb-4">集団分析</h2>
 
       {/* サブタブ */}

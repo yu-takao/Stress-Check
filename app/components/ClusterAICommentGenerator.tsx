@@ -13,6 +13,9 @@ interface Props {
 }
 
 export default function ClusterAICommentGenerator({ users }: Props) {
+  // 集団分析の追記プロンプト
+  const clusterExtra = typeof window !== 'undefined' ? (localStorage.getItem('ai_extra_prompt_cluster') || '') : '';
+
   const {
     avgA,
     avgB,
@@ -136,6 +139,8 @@ export default function ClusterAICommentGenerator({ users }: Props) {
       yearsOfService={clusterInfo.yearsOfService}
       // location not directly supported, but could be embedded in department string
       isCluster={true}
+      // 個人用のAICommentGeneratorを流用するため、localStorage 経由で extraPrompt を渡す
+      extraPromptOverride={clusterExtra}
     />
   );
 }

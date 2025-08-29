@@ -41,15 +41,15 @@ export default function ClusterDetail({ users }: Props) {
   return (
     <div className="mt-10 bg-white shadow rounded-lg p-6">
       <h3 className="text-lg font-semibold mb-4">選択クラスタの平均評価</h3>
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* 左: 尺度テーブル & チャート群 */}
-        <div className="flex-1 space-y-12">
+      <div className="space-y-10 max-w-full overflow-x-hidden">
+        {/* 上: 尺度テーブル & チャート群（A/B/C を縦積み） */}
+        <div className="space-y-12 min-w-0">
           <DomainSection domain="A" scores={scores} showRaw={false} baselineScores={baseline} />
           <DomainSection domain="B" scores={scores} showRaw={false} baselineScores={baseline} />
           <DomainSection domain="C" scores={scores} showRaw={false} baselineScores={baseline} />
         </div>
-        {/* 右: AI コメント */}
-        <div className="md:w-96 lg:w-[28rem] flex-shrink-0">
+        {/* 下: AI コメント（チャート下に配置） */}
+        <div className="w-full max-w-full min-w-0 overflow-x-hidden">
           <ClusterAICommentGenerator users={users} />
         </div>
       </div>
