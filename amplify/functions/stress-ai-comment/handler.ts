@@ -360,7 +360,7 @@ ${isEN ? 'Advice:' : isZHCN ? '建议：' : isZHTW ? '建議：' : isKO ? '조�
  */
 async function generateAiComment(prompt: string): Promise<string> {
   try {
-    const modelId = 'us.anthropic.claude-sonnet-4-20250514-v1:0';
+    const modelId = process.env.BEDROCK_MODEL_ID || 'anthropic.claude-3-haiku-20240307-v1:0';
     console.log('Using Bedrock model:', modelId);
     console.log('Bedrock region:', process.env.BEDROCK_REGION || 'us-east-1');
     
