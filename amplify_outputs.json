@@ -1,9 +1,9 @@
 {
   "auth": {
-    "user_pool_id": "ap-northeast-1_mS9dygQrD",
+    "user_pool_id": "ap-northeast-1_JcBVakobk",
     "aws_region": "ap-northeast-1",
-    "user_pool_client_id": "23soeq1jqb2mvdgem8ga5nk3lr",
-    "identity_pool_id": "ap-northeast-1:1e2f050f-45ab-4878-a7a6-aba326dfd23b",
+    "user_pool_client_id": "4rgef44n0jhbnga5i9rigk0ng8",
+    "identity_pool_id": "ap-northeast-1:813563b6-50ed-4aa1-93b4-bbbf9df6eba6",
     "mfa_methods": [],
     "standard_required_attributes": [
       "email"
@@ -26,9 +26,9 @@
     "unauthenticated_identities_enabled": true
   },
   "data": {
-    "url": "https://ibtpz5nejvhphguehozvxipzga.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+    "url": "https://x4j4iup4znbvtkqmqvh3cnjnya.appsync-api.ap-northeast-1.amazonaws.com/graphql",
     "aws_region": "ap-northeast-1",
-    "api_key": "da2-5kbqgb6l3bepvnzbodjw66u7ri",
+    "api_key": "da2-6n4cv3igxzbyth6elygxemb5gi",
     "default_authorization_type": "AMAZON_COGNITO_USER_POOLS",
     "authorization_types": [
       "API_KEY",
@@ -267,74 +267,6 @@
               "name": "subscaleScores",
               "isArray": false,
               "type": "AWSJSON",
-              "isRequired": true
-            }
-          }
-        },
-        "listKnowledgeDocs": {
-          "name": "listKnowledgeDocs",
-          "isArray": false,
-          "type": "AWSJSON",
-          "isRequired": false,
-          "arguments": {
-            "prefix": {
-              "name": "prefix",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false
-            },
-            "maxKeys": {
-              "name": "maxKeys",
-              "isArray": false,
-              "type": "Int",
-              "isRequired": false
-            }
-          }
-        }
-      },
-      "mutations": {
-        "uploadKnowledge": {
-          "name": "uploadKnowledge",
-          "isArray": false,
-          "type": "AWSJSON",
-          "isRequired": false,
-          "arguments": {
-            "fileName": {
-              "name": "fileName",
-              "isArray": false,
-              "type": "String",
-              "isRequired": true
-            },
-            "contentBase64": {
-              "name": "contentBase64",
-              "isArray": false,
-              "type": "String",
-              "isRequired": true
-            },
-            "bucket": {
-              "name": "bucket",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false
-            },
-            "prefix": {
-              "name": "prefix",
-              "isArray": false,
-              "type": "String",
-              "isRequired": false
-            }
-          }
-        },
-        "deleteKnowledgeDoc": {
-          "name": "deleteKnowledgeDoc",
-          "isArray": false,
-          "type": "AWSJSON",
-          "isRequired": false,
-          "arguments": {
-            "key": {
-              "name": "key",
-              "isArray": false,
-              "type": "String",
               "isRequired": true
             }
           }
